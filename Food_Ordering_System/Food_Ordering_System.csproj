@@ -46,11 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminView.Designer.cs">
+      <DependentUpon>AdminView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginScreenAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginScreenAdmin.Designer.cs">
+      <DependentUpon>LoginScreenAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationScreenDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationScreenDelivery.Designer.cs">
+      <DependentUpon>RegistrationScreenDelivery.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeScreenBusiness.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HomeScreenBusiness.Designer.cs">
       <DependentUpon>HomeScreenBusiness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeScreenDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeScreenDelivery.Designer.cs">
+      <DependentUpon>HomeScreenDelivery.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeScreenUser.cs">
       <SubType>Form</SubType>
@@ -66,14 +90,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationScreenBusiness.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationScreenBusiness.Designer.cs">
+      <DependentUpon>RegistrationScreenBusiness.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistrationScreenUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegistrationScreenUser.Designer.cs">
       <DependentUpon>RegistrationScreenUser.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminView.resx">
+      <DependentUpon>AdminView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginScreenAdmin.resx">
+      <DependentUpon>LoginScreenAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrationScreenDelivery.resx">
+      <DependentUpon>RegistrationScreenDelivery.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeScreenBusiness.resx">
       <DependentUpon>HomeScreenBusiness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeScreenDelivery.resx">
+      <DependentUpon>HomeScreenDelivery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeScreenUser.resx">
       <DependentUpon>HomeScreenUser.cs</DependentUpon>
@@ -91,6 +133,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RegistrationScreenBusiness.resx">
+      <DependentUpon>RegistrationScreenBusiness.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistrationScreenUser.resx">
       <DependentUpon>RegistrationScreenUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +154,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Background-HomeScreen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\photo-male-deliveryman-with-helmet-driving-yellow-scooter-while-holding-pizza-boxes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\15712.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\3825207.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

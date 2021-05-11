@@ -1,7 +1,7 @@
 ﻿
 namespace Food_Ordering_System
 {
-    partial class HomeScreenBusiness
+    partial class AdminView
     {
         /// <summary>
         /// Required designer variable.
@@ -31,17 +31,15 @@ namespace Food_Ordering_System
         {
             this.SuspendLayout();
             // 
-            // HomeScreenBusiness
+            // AdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1382, 753);
-            this.KeyPreview = true;
-            this.Name = "HomeScreenBusiness";
-            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Name = "AdminView";
             this.ShowIcon = false;
-            this.Text = "PaantaHaari (Business)";
+            this.Text = "PaantaHaari (Admin)";
             this.ResumeLayout(false);
 
         }

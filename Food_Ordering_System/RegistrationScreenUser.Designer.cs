@@ -29,7 +29,7 @@ namespace Food_Ordering_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.label7 = new System.Windows.Forms.Label();
+            this.loginLabel = new System.Windows.Forms.Label();
             this.registerBox = new System.Windows.Forms.Button();
             this.contactBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -57,17 +57,19 @@ namespace Food_Ordering_System
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // label7
+            // loginLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(669, 674);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 22);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "Login";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.loginLabel.AutoSize = true;
+            this.loginLabel.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginLabel.ForeColor = System.Drawing.Color.SteelBlue;
+            this.loginLabel.Location = new System.Drawing.Point(669, 674);
+            this.loginLabel.Name = "loginLabel";
+            this.loginLabel.Size = new System.Drawing.Size(57, 22);
+            this.loginLabel.TabIndex = 27;
+            this.loginLabel.Text = "Login";
+            this.loginLabel.Click += new System.EventHandler(this.label7_Click);
+            this.loginLabel.MouseLeave += new System.EventHandler(this.loginLabelLeave);
+            this.loginLabel.MouseHover += new System.EventHandler(this.loginLabelHover);
             // 
             // registerBox
             // 
@@ -275,7 +277,7 @@ namespace Food_Ordering_System
             this.pictureBox4.TabIndex = 39;
             this.pictureBox4.TabStop = false;
             // 
-            // RegistrationScreen
+            // RegistrationScreenUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -293,7 +295,7 @@ namespace Food_Ordering_System
             this.Controls.Add(this.label9);
             this.Controls.Add(this.emailBox);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.loginLabel);
             this.Controls.Add(this.registerBox);
             this.Controls.Add(this.contactBox);
             this.Controls.Add(this.label6);
@@ -303,7 +305,7 @@ namespace Food_Ordering_System
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "RegistrationScreen";
+            this.Name = "RegistrationScreenUser";
             this.ShowIcon = false;
             this.Text = "PaantaHaari";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -317,7 +319,7 @@ namespace Food_Ordering_System
 
         #endregion
 
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label loginLabel;
         private System.Windows.Forms.Button registerBox;
         private System.Windows.Forms.TextBox contactBox;
         private System.Windows.Forms.Label label6;

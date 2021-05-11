@@ -1,7 +1,7 @@
 ﻿
 namespace Food_Ordering_System
 {
-    partial class HomeScreenBusiness
+    partial class HomeScreenDelivery
     {
         /// <summary>
         /// Required designer variable.
@@ -31,17 +31,14 @@ namespace Food_Ordering_System
         {
             this.SuspendLayout();
             // 
-            // HomeScreenBusiness
+            // HomeScreenDelivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1382, 753);
-            this.KeyPreview = true;
-            this.Name = "HomeScreenBusiness";
-            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Name = "HomeScreenDelivery";
             this.ShowIcon = false;
-            this.Text = "PaantaHaari (Business)";
+            this.Text = "PaantaHaari (Delivery)";
             this.ResumeLayout(false);
 
         }

@@ -63,9 +63,40 @@ namespace Food_Ordering_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _15712 {
+            get {
+                object obj = ResourceManager.GetObject("15712", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3825207 {
+            get {
+                object obj = ResourceManager.GetObject("3825207", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Background_HomeScreen {
             get {
                 object obj = ResourceManager.GetObject("Background-HomeScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo_male_deliveryman_with_helmet_driving_yellow_scooter_while_holding_pizza_boxes {
+            get {
+                object obj = ResourceManager.GetObject("photo-male-deliveryman-with-helmet-driving-yellow-scooter-while-holding-pizza-box" +
+                        "es", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

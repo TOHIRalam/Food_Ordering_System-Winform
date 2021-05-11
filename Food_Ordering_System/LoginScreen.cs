@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -28,6 +29,8 @@ namespace Food_Ordering_System
                         Hide();
                         if (searchedData.Rows[0][2].ToString() == "User") {
                             new HomeScreenUser().Show();
+                        } else if(searchedData.Rows[0][2].ToString() == "Delivery") {
+                            new HomeScreenDelivery().Show();
                         } else {
                             new HomeScreenBusiness().Show();
                         }
@@ -41,5 +44,59 @@ namespace Food_Ordering_System
         }
 
         private void label7_Click(object sender, EventArgs e) { Hide(); new RegistrationScreenUser().Show(); }
+
+        private void label8_Click(object sender, EventArgs e) { Hide(); new RegistrationScreenBusiness().Show(); }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new RegistrationScreenDelivery().Show();
+        }
+
+        private void textBoxHover(object sender, EventArgs e)
+        {
+            registerLabel.ForeColor = Color.DarkBlue;
+        }
+
+        private void textBoxLeave(object sender, EventArgs e)
+        {
+            registerLabel.ForeColor = Color.SteelBlue;
+        }
+
+        private void businessRegisterHover(object sender, EventArgs e)
+        {
+            label8.ForeColor = Color.DarkBlue;
+        }
+
+        private void businessRegisterLeave(object sender, EventArgs e)
+        {
+            label8.ForeColor = Color.SteelBlue;
+        }
+
+        private void deliveryHover(object sender, EventArgs e)
+        {
+            label9.ForeColor = Color.DarkBlue;
+        }
+
+        private void deliveryLeave(object sender, EventArgs e)
+        {
+            label9.ForeColor = Color.SlateBlue;
+        }
+
+        private void adminLabelHover(object sender, EventArgs e)
+        {
+            adminLabel.ForeColor = Color.Black;
+        }
+
+        private void adminLabelLeave(object sender, EventArgs e)
+        {
+            adminLabel.ForeColor = Color.Gray;
+        }
+
+        private void adminLabel_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new LoginScreenAdmin().Show();
+        }
     }
 }
