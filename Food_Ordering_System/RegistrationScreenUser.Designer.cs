@@ -1,7 +1,7 @@
 ﻿
 namespace Food_Ordering_System
 {
-    partial class RegistrationScreen
+    partial class RegistrationScreenUser
     {
         /// <summary>
         /// Required designer variable.

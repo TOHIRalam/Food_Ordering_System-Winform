@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace Food_Ordering_System
 {
-    public partial class RegistrationScreen : Form
+    public partial class RegistrationScreenUser : Form
     {
-        public RegistrationScreen()
+        public RegistrationScreenUser()
         {
             InitializeComponent();
         }
@@ -59,7 +59,7 @@ namespace Food_Ordering_System
                                         try {
                                             DataTable insertData = new DataTable();
                                             SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-V8VBVOH\SQLEXPRESS;Initial Catalog=FoodOrderingSystemDB_;Integrated Security=True;Pooling=False");
-                                            new SqlDataAdapter($"INSERT INTO UserInfo VALUES ('{name}', '{email}', '{password.GetHashCode()}', '{contact}', '{address}', '{DateTime.Now.ToString()}')", connect).Fill(insertData);
+                                            new SqlDataAdapter($"INSERT INTO UserInfo VALUES ('{name}', '{email}', '{password.GetHashCode()}', '{contact}', '{address}', 'User', '{DateTime.Now.ToString()}')", connect).Fill(insertData);
                                             MessageBox.Show("Registration Successful!");
                                             Hide(); new LoginScreen().Show();
                                         } catch (Exception ex) {
@@ -74,6 +74,6 @@ namespace Food_Ordering_System
             }
         }
 
-        private void label7_Click(object sender, EventArgs e) { Hide(); new RegistrationScreen().Show(); }
+        private void label7_Click(object sender, EventArgs e) { Hide(); new LoginScreen().Show(); }
     }
 }
