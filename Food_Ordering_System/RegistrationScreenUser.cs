@@ -58,7 +58,7 @@ namespace Food_Ordering_System
                                     if(i == contact.Length) {
                                         try {
                                             DataTable insertData = new DataTable();
-                                            SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-V8VBVOH\SQLEXPRESS;Initial Catalog=FoodOrderingSystemDB_;Integrated Security=True;Pooling=False");
+                                            SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
                                             new SqlDataAdapter($"INSERT INTO UserInfo VALUES ('{name}', '{email}', '{password.GetHashCode()}', '{contact}', '{address}', 'User', '{DateTime.Now.ToString()}')", connect).Fill(insertData);
                                             MessageBox.Show("Registration Successful!");
                                             Hide(); new LoginScreen().Show();
