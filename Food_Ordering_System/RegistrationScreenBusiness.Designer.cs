@@ -316,7 +316,7 @@ namespace Food_Ordering_System
             this.pictureBox2.BackColor = System.Drawing.Color.Maroon;
             this.pictureBox2.Location = new System.Drawing.Point(486, 85);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(10, 659);
+            this.pictureBox2.Size = new System.Drawing.Size(10, 701);
             this.pictureBox2.TabIndex = 60;
             this.pictureBox2.TabStop = false;
             // 
@@ -373,7 +373,10 @@ namespace Food_Ordering_System
             this.Controls.Add(this.label6);
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.label5);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "RegistrationScreenBusiness";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaantaHaari - Register Business";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

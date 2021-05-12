@@ -180,6 +180,7 @@ namespace Food_Ordering_System
             this.Controls.Add(this.label4);
             this.Name = "LoginScreenAdmin";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login as Admin";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

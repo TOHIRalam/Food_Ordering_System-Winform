@@ -22,10 +22,11 @@ namespace Food_Ordering_System
                 MessageBox.Show("Any field should not be empty!");
             } else {
                 try {
-                    DataTable searchedData = new DataTable();
+                    DataTable searchedData = new DataTable(); DataTable activeUser = new DataTable();
                     SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
                     new SqlDataAdapter($"SELECT email, password, user_type FROM UserInfo WHERE email = '{email}' AND password = '{password.GetHashCode()}';", connect).Fill(searchedData);
                     if (searchedData.Rows.Count == 1) {
+                        new SqlDataAdapter($"INSERT INTO activeUsers VALUES ('{email}')", connect).Fill(activeUser);
                         Hide();
                         if (searchedData.Rows[0][2].ToString() == "User") {
                             new HomeScreenUser().Show();
@@ -36,6 +37,7 @@ namespace Food_Ordering_System
                         }
                     } else {
                         MessageBox.Show("User do not exist!");
+                        searchedData.Clear();
                     }
                 } catch (Exception exc) {
                     MessageBox.Show(exc.Message);
@@ -97,6 +99,11 @@ namespace Food_Ordering_System
         {
             Hide();
             new LoginScreenAdmin().Show();
+        }
+
+        private void LoginScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

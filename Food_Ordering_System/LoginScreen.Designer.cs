@@ -29,6 +29,7 @@ namespace Food_Ordering_System
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginScreen));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,7 +65,7 @@ namespace Food_Ordering_System
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(492, 34);
+            this.label1.Location = new System.Drawing.Point(473, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 39);
             this.label1.TabIndex = 0;
@@ -75,7 +76,7 @@ namespace Food_Ordering_System
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Coral;
-            this.label2.Location = new System.Drawing.Point(676, 16);
+            this.label2.Location = new System.Drawing.Point(657, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(274, 57);
             this.label2.TabIndex = 1;
@@ -86,7 +87,7 @@ namespace Food_Ordering_System
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightSalmon;
-            this.label3.Location = new System.Drawing.Point(616, 73);
+            this.label3.Location = new System.Drawing.Point(597, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(204, 22);
             this.label3.TabIndex = 2;
@@ -96,7 +97,7 @@ namespace Food_Ordering_System
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(450, 209);
+            this.label4.Location = new System.Drawing.Point(431, 209);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 36);
             this.label4.TabIndex = 3;
@@ -106,7 +107,7 @@ namespace Food_Ordering_System
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(364, 283);
+            this.label5.Location = new System.Drawing.Point(345, 283);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 25);
             this.label5.TabIndex = 4;
@@ -116,7 +117,7 @@ namespace Food_Ordering_System
             // 
             this.emailBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.emailBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailBox.Location = new System.Drawing.Point(369, 311);
+            this.emailBox.Location = new System.Drawing.Point(350, 311);
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(247, 28);
             this.emailBox.TabIndex = 5;
@@ -125,7 +126,7 @@ namespace Food_Ordering_System
             // 
             this.passwordBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passwordBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordBox.Location = new System.Drawing.Point(369, 392);
+            this.passwordBox.Location = new System.Drawing.Point(350, 392);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(247, 29);
             this.passwordBox.TabIndex = 7;
@@ -134,7 +135,7 @@ namespace Food_Ordering_System
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(364, 364);
+            this.label6.Location = new System.Drawing.Point(345, 364);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 25);
             this.label6.TabIndex = 6;
@@ -146,7 +147,7 @@ namespace Food_Ordering_System
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(369, 461);
+            this.button1.Location = new System.Drawing.Point(350, 461);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(247, 38);
             this.button1.TabIndex = 8;
@@ -159,7 +160,7 @@ namespace Food_Ordering_System
             this.registerLabel.AutoSize = true;
             this.registerLabel.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerLabel.ForeColor = System.Drawing.Color.SteelBlue;
-            this.registerLabel.Location = new System.Drawing.Point(379, 609);
+            this.registerLabel.Location = new System.Drawing.Point(360, 609);
             this.registerLabel.Name = "registerLabel";
             this.registerLabel.Size = new System.Drawing.Size(79, 22);
             this.registerLabel.TabIndex = 13;
@@ -173,7 +174,7 @@ namespace Food_Ordering_System
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label8.Location = new System.Drawing.Point(471, 609);
+            this.label8.Location = new System.Drawing.Point(452, 609);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(155, 22);
             this.label8.TabIndex = 15;
@@ -188,7 +189,7 @@ namespace Food_Ordering_System
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.SlateBlue;
-            this.label9.Location = new System.Drawing.Point(852, 605);
+            this.label9.Location = new System.Drawing.Point(833, 605);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(203, 22);
             this.label9.TabIndex = 20;
@@ -199,8 +200,8 @@ namespace Food_Ordering_System
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Image = global::Food_Ordering_System.Properties.Resources._15712;
-            this.pictureBox9.Location = new System.Drawing.Point(728, 535);
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(709, 535);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(442, 68);
             this.pictureBox9.TabIndex = 19;
@@ -209,8 +210,8 @@ namespace Food_Ordering_System
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::Food_Ordering_System.Properties.Resources._15712;
-            this.pictureBox8.Location = new System.Drawing.Point(728, 162);
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(709, 162);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(442, 68);
             this.pictureBox8.TabIndex = 18;
@@ -220,8 +221,8 @@ namespace Food_Ordering_System
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.SandyBrown;
-            this.pictureBox6.Image = global::Food_Ordering_System.Properties.Resources._15712;
-            this.pictureBox6.Location = new System.Drawing.Point(728, 162);
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(709, 162);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(442, 441);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -232,7 +233,7 @@ namespace Food_Ordering_System
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pictureBox5.Location = new System.Drawing.Point(464, 609);
+            this.pictureBox5.Location = new System.Drawing.Point(445, 609);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(1, 20);
             this.pictureBox5.TabIndex = 14;
@@ -241,7 +242,7 @@ namespace Food_Ordering_System
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pictureBox4.Location = new System.Drawing.Point(270, 602);
+            this.pictureBox4.Location = new System.Drawing.Point(251, 602);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(443, 1);
             this.pictureBox4.TabIndex = 12;
@@ -250,7 +251,7 @@ namespace Food_Ordering_System
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pictureBox3.Location = new System.Drawing.Point(711, 162);
+            this.pictureBox3.Location = new System.Drawing.Point(692, 162);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(1, 441);
             this.pictureBox3.TabIndex = 11;
@@ -259,7 +260,7 @@ namespace Food_Ordering_System
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pictureBox2.Location = new System.Drawing.Point(270, 162);
+            this.pictureBox2.Location = new System.Drawing.Point(251, 162);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(1, 441);
             this.pictureBox2.TabIndex = 10;
@@ -268,7 +269,7 @@ namespace Food_Ordering_System
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.pictureBox1.Location = new System.Drawing.Point(269, 162);
+            this.pictureBox1.Location = new System.Drawing.Point(250, 162);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(443, 1);
             this.pictureBox1.TabIndex = 9;
@@ -279,7 +280,7 @@ namespace Food_Ordering_System
             this.adminLabel.AutoSize = true;
             this.adminLabel.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminLabel.ForeColor = System.Drawing.Color.DarkGray;
-            this.adminLabel.Location = new System.Drawing.Point(682, 722);
+            this.adminLabel.Location = new System.Drawing.Point(663, 722);
             this.adminLabel.Name = "adminLabel";
             this.adminLabel.Size = new System.Drawing.Size(65, 22);
             this.adminLabel.TabIndex = 21;
@@ -315,9 +316,12 @@ namespace Food_Ordering_System
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "LoginScreen";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaantaHaari";
+            this.Load += new System.EventHandler(this.LoginScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
