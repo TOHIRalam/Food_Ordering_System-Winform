@@ -52,7 +52,7 @@ namespace Food_Ordering_System
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.Color.White;
-            this.loginButton.Location = new System.Drawing.Point(581, 453);
+            this.loginButton.Location = new System.Drawing.Point(581, 482);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(247, 38);
             this.loginButton.TabIndex = 14;
@@ -62,9 +62,10 @@ namespace Food_Ordering_System
             // 
             // passwordBox
             // 
+            this.passwordBox.BackColor = System.Drawing.Color.White;
             this.passwordBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passwordBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordBox.Location = new System.Drawing.Point(581, 363);
+            this.passwordBox.Location = new System.Drawing.Point(581, 371);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(247, 29);
             this.passwordBox.TabIndex = 13;
@@ -74,7 +75,7 @@ namespace Food_Ordering_System
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(576, 335);
+            this.label6.Location = new System.Drawing.Point(576, 343);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 25);
             this.label6.TabIndex = 12;
@@ -82,9 +83,10 @@ namespace Food_Ordering_System
             // 
             // nameBox
             // 
+            this.nameBox.BackColor = System.Drawing.Color.White;
             this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nameBox.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameBox.Location = new System.Drawing.Point(581, 282);
+            this.nameBox.Location = new System.Drawing.Point(581, 294);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(247, 28);
             this.nameBox.TabIndex = 11;
@@ -94,7 +96,7 @@ namespace Food_Ordering_System
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(576, 254);
+            this.label5.Location = new System.Drawing.Point(576, 266);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 25);
             this.label5.TabIndex = 10;
@@ -105,7 +107,7 @@ namespace Food_Ordering_System
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(598, 172);
+            this.label4.Location = new System.Drawing.Point(598, 184);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(211, 36);
             this.label4.TabIndex = 9;
@@ -114,7 +116,7 @@ namespace Food_Ordering_System
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox4.Location = new System.Drawing.Point(482, 567);
+            this.pictureBox4.Location = new System.Drawing.Point(482, 579);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(443, 1);
             this.pictureBox4.TabIndex = 25;
@@ -123,7 +125,7 @@ namespace Food_Ordering_System
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox3.Location = new System.Drawing.Point(923, 127);
+            this.pictureBox3.Location = new System.Drawing.Point(923, 139);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(1, 441);
             this.pictureBox3.TabIndex = 24;
@@ -132,7 +134,7 @@ namespace Food_Ordering_System
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox2.Location = new System.Drawing.Point(482, 127);
+            this.pictureBox2.Location = new System.Drawing.Point(482, 139);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(1, 441);
             this.pictureBox2.TabIndex = 23;
@@ -141,7 +143,7 @@ namespace Food_Ordering_System
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox1.Location = new System.Drawing.Point(481, 127);
+            this.pictureBox1.Location = new System.Drawing.Point(481, 139);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(443, 1);
             this.pictureBox1.TabIndex = 22;
@@ -151,8 +153,8 @@ namespace Food_Ordering_System
             // 
             this.loginLabel.AutoSize = true;
             this.loginLabel.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginLabel.ForeColor = System.Drawing.Color.Turquoise;
-            this.loginLabel.Location = new System.Drawing.Point(677, 571);
+            this.loginLabel.ForeColor = System.Drawing.Color.AliceBlue;
+            this.loginLabel.Location = new System.Drawing.Point(677, 583);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(57, 22);
             this.loginLabel.TabIndex = 50;

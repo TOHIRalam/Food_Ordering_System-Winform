@@ -99,7 +99,7 @@ namespace Food_Ordering_System
                                             DataTable insertData = new DataTable();
                                             DataTable insertDataRestaurant = new DataTable();
                                             SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
-                                            new SqlDataAdapter($"INSERT INTO UserInfo VALUES ('{name}', '{email}', '{password.GetHashCode()}', '{contact}', '{address}', 'User', '{DateTime.Now.ToString()}')", connect).Fill(insertData);
+                                            new SqlDataAdapter($"INSERT INTO UserInfo VALUES ('{name}', '{email}', '{password.GetHashCode()}', '{contact}', '{address}', 'Business', '{DateTime.Now.ToString()}')", connect).Fill(insertData);
                                             new SqlDataAdapter($"INSERT INTO RestaurantInformation VALUES('{email}', '{restaurantName}', '{officialEmail}', '{officialContact}', '{restaurantLocation}')", connect).Fill(insertDataRestaurant);
                                             MessageBox.Show("Registration Successful!");
                                             Hide(); new LoginScreen().Show();
