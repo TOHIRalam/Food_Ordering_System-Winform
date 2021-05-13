@@ -58,6 +58,12 @@
     <Compile Include="LoginScreenAdmin.Designer.cs">
       <DependentUpon>LoginScreenAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="my_restaurant_user_control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="my_restaurant_user_control.Designer.cs">
+      <DependentUpon>my_restaurant_user_control.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistrationScreenDelivery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginScreenAdmin.resx">
       <DependentUpon>LoginScreenAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="my_restaurant_user_control.resx">
+      <DependentUpon>my_restaurant_user_control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrationScreenDelivery.resx">
       <DependentUpon>RegistrationScreenDelivery.cs</DependentUpon>

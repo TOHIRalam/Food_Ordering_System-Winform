@@ -52,8 +52,13 @@ namespace Food_Ordering_System
             this.label7 = new System.Windows.Forms.Label();
             this.todaysDate = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.emailBox = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.userInformationGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // userInformationGrid
@@ -217,7 +222,7 @@ namespace Food_Ordering_System
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(57, 612);
+            this.label3.Location = new System.Drawing.Point(342, 619);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 4;
@@ -228,7 +233,7 @@ namespace Food_Ordering_System
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Yellow;
-            this.label4.Location = new System.Drawing.Point(57, 641);
+            this.label4.Location = new System.Drawing.Point(342, 648);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 20);
             this.label4.TabIndex = 5;
@@ -239,7 +244,7 @@ namespace Food_Ordering_System
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Yellow;
-            this.label5.Location = new System.Drawing.Point(57, 671);
+            this.label5.Location = new System.Drawing.Point(342, 678);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(126, 20);
             this.label5.TabIndex = 6;
@@ -250,7 +255,7 @@ namespace Food_Ordering_System
             this.nUser.AutoSize = true;
             this.nUser.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nUser.ForeColor = System.Drawing.Color.LawnGreen;
-            this.nUser.Location = new System.Drawing.Point(116, 613);
+            this.nUser.Location = new System.Drawing.Point(401, 620);
             this.nUser.Name = "nUser";
             this.nUser.Size = new System.Drawing.Size(18, 20);
             this.nUser.TabIndex = 7;
@@ -261,7 +266,7 @@ namespace Food_Ordering_System
             this.nDelivery.AutoSize = true;
             this.nDelivery.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nDelivery.ForeColor = System.Drawing.Color.LawnGreen;
-            this.nDelivery.Location = new System.Drawing.Point(203, 641);
+            this.nDelivery.Location = new System.Drawing.Point(488, 648);
             this.nDelivery.Name = "nDelivery";
             this.nDelivery.Size = new System.Drawing.Size(18, 20);
             this.nDelivery.TabIndex = 8;
@@ -272,7 +277,7 @@ namespace Food_Ordering_System
             this.nRestaurants.AutoSize = true;
             this.nRestaurants.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nRestaurants.ForeColor = System.Drawing.Color.LawnGreen;
-            this.nRestaurants.Location = new System.Drawing.Point(193, 671);
+            this.nRestaurants.Location = new System.Drawing.Point(478, 678);
             this.nRestaurants.Name = "nRestaurants";
             this.nRestaurants.Size = new System.Drawing.Size(18, 20);
             this.nRestaurants.TabIndex = 9;
@@ -283,7 +288,7 @@ namespace Food_Ordering_System
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.label7.Location = new System.Drawing.Point(57, 696);
+            this.label7.Location = new System.Drawing.Point(342, 703);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 20);
             this.label7.TabIndex = 12;
@@ -294,7 +299,7 @@ namespace Food_Ordering_System
             this.todaysDate.AutoSize = true;
             this.todaysDate.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.todaysDate.ForeColor = System.Drawing.Color.Violet;
-            this.todaysDate.Location = new System.Drawing.Point(116, 696);
+            this.todaysDate.Location = new System.Drawing.Point(401, 703);
             this.todaysDate.Name = "todaysDate";
             this.todaysDate.Size = new System.Drawing.Size(18, 20);
             this.todaysDate.TabIndex = 13;
@@ -314,12 +319,58 @@ namespace Food_Ordering_System
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(15, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(210, 22);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Delete User (Enter email)";
+            // 
+            // emailBox
+            // 
+            this.emailBox.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailBox.Location = new System.Drawing.Point(19, 43);
+            this.emailBox.Name = "emailBox";
+            this.emailBox.Size = new System.Drawing.Size(238, 29);
+            this.emailBox.TabIndex = 16;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.emailBox);
+            this.panel1.Location = new System.Drawing.Point(61, 605);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(275, 128);
+            this.panel1.TabIndex = 17;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Crimson;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(19, 78);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(238, 32);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Delete";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // AdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1382, 753);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.todaysDate);
             this.Controls.Add(this.label7);
@@ -341,6 +392,8 @@ namespace Food_Ordering_System
             this.Load += new System.EventHandler(this.page_load);
             ((System.ComponentModel.ISupportInitialize)(this.userInformationGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,5 +414,9 @@ namespace Food_Ordering_System
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label todaysDate;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox emailBox;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button2;
     }
 }

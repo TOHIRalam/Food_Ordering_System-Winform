@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Food_Ordering_System
 {
     public partial class RegistrationScreenBusiness : Form
     {
+        public bool logoAdded = false;
+        public bool profilePicAdded = false;
+        string logoLocation = "", propicLocation = "";
         public RegistrationScreenBusiness()
         {
             InitializeComponent();
@@ -81,6 +86,10 @@ namespace Food_Ordering_System
                                 {
                                     MessageBox.Show("Invalid contact\nPlesase insert a valid Bangladeshi contact number!\nUse +880 before your contact number!");
                                 }
+                                else if(!logoAdded || !profilePicAdded)
+                                {
+                                    MessageBox.Show("Please upload required picture and logo");
+                                }
                                 else
                                 {
                                     int i;
@@ -97,11 +106,32 @@ namespace Food_Ordering_System
                                         try
                                         {
                                             DataTable insertData = new DataTable();
-                                            DataTable insertDataRestaurant = new DataTable();
+                                            // DataTable insertDataRestaurant = new DataTable();
+
+                                            // Convert logo to binary
+                                            byte[] logo = null;
+                                            FileStream logoStream = new FileStream(logoLocation, FileMode.Open, FileAccess.Read);
+                                            BinaryReader logoBinary = new BinaryReader(logoStream);
+                                            logo = logoBinary.ReadBytes((int)logoStream.Length);
+
+                                            // Convert propic to binary
+                                            byte[] propic = null;
+                                            FileStream propicStream = new FileStream(propicLocation, FileMode.Open, FileAccess.Read);
+                                            BinaryReader propicBinary = new BinaryReader(propicStream);
+                                            propic = propicBinary.ReadBytes((int)propicStream.Length);
+
                                             SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
+                                            string SqlQueryInsert = $"INSERT INTO RestaurantInformation VALUES('{email}', '{restaurantName}', '{officialEmail}', '{officialContact}', '{restaurantLocation}', @logo, @propic)";
+                                            connect.Open();
+                                            SqlCommand cmd = new SqlCommand(SqlQueryInsert, connect);
+                                            cmd.Parameters.Add(new SqlParameter("@logo", logo));
+                                            cmd.Parameters.Add(new SqlParameter("@propic", propic));
+                                            int n = cmd.ExecuteNonQuery();
+
+                                            // new SqlDataAdapter(SqlQueryInsert, connect).Fill(insertDataRestaurant);
                                             new SqlDataAdapter($"INSERT INTO UserInfo VALUES ('{name}', '{email}', '{password.GetHashCode()}', '{contact}', '{address}', 'Business', '{DateTime.Now.ToString()}')", connect).Fill(insertData);
-                                            new SqlDataAdapter($"INSERT INTO RestaurantInformation VALUES('{email}', '{restaurantName}', '{officialEmail}', '{officialContact}', '{restaurantLocation}')", connect).Fill(insertDataRestaurant);
                                             MessageBox.Show("Registration Successful!");
+                                            connect.Close();
                                             Hide(); new LoginScreen().Show();
                                         }
                                         catch (Exception ex)
@@ -115,6 +145,32 @@ namespace Food_Ordering_System
                     }
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog profilePicture = new OpenFileDialog();
+            profilePicture.Filter = "Image Files (*.jpg;*.jpeg;.*.gif;)|*.jpg;*.jpeg;.*.gif";
+            profilePicture.Title = "Select admin's picture";
+            if (profilePicture.ShowDialog() == DialogResult.OK)
+            {
+                profilePicUploadBox.Image = new Bitmap(profilePicture.FileName);
+                propicLocation = profilePicture.FileName.ToString();
+            }
+            profilePicAdded = true;
+        }
+
+        private void logoUploadButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog logo = new OpenFileDialog();
+            logo.Filter = "Image Files (*.jpg;*.jpeg;.*.gif;)|*.jpg;*.jpeg;.*.gif";
+            logo.Title = "Select your restaurant's logo picture";
+            if (logo.ShowDialog() == DialogResult.OK)
+            {
+                logoUploadBox.Image = new Bitmap(logo.FileName);
+                logoLocation = logo.FileName.ToString();
+            }
+            logoAdded = true;
         }
     }
 }

@@ -37,7 +37,6 @@ namespace Food_Ordering_System
             this.historyButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.restaurantNameDashboard = new System.Windows.Forms.Label();
             this.sidePanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -47,7 +46,6 @@ namespace Food_Ordering_System
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.sidePanel.Controls.Add(this.panel2);
             this.sidePanel.Controls.Add(this.button1);
             this.sidePanel.Controls.Add(this.pictureBox1);
             this.sidePanel.Controls.Add(this.historyButton);
@@ -79,16 +77,16 @@ namespace Food_Ordering_System
             this.addMenuItemButton.ForeColor = System.Drawing.Color.White;
             this.addMenuItemButton.Image = ((System.Drawing.Image)(resources.GetObject("addMenuItemButton.Image")));
             this.addMenuItemButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addMenuItemButton.Location = new System.Drawing.Point(15, 287);
+            this.addMenuItemButton.Location = new System.Drawing.Point(0, 284);
             this.addMenuItemButton.Name = "addMenuItemButton";
-            this.addMenuItemButton.Size = new System.Drawing.Size(216, 75);
+            this.addMenuItemButton.Size = new System.Drawing.Size(238, 75);
             this.addMenuItemButton.TabIndex = 0;
             this.addMenuItemButton.Text = "Update Menu";
             this.addMenuItemButton.UseVisualStyleBackColor = false;
             // 
             // ProfileButton
             // 
-            this.ProfileButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.ProfileButton.BackColor = System.Drawing.Color.Crimson;
             this.ProfileButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ProfileButton.FlatAppearance.BorderSize = 0;
             this.ProfileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -96,9 +94,9 @@ namespace Food_Ordering_System
             this.ProfileButton.ForeColor = System.Drawing.Color.White;
             this.ProfileButton.Image = ((System.Drawing.Image)(resources.GetObject("ProfileButton.Image")));
             this.ProfileButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ProfileButton.Location = new System.Drawing.Point(15, 206);
+            this.ProfileButton.Location = new System.Drawing.Point(0, 206);
             this.ProfileButton.Name = "ProfileButton";
-            this.ProfileButton.Size = new System.Drawing.Size(216, 75);
+            this.ProfileButton.Size = new System.Drawing.Size(238, 75);
             this.ProfileButton.TabIndex = 1;
             this.ProfileButton.Text = "My Restaurant";
             this.ProfileButton.UseVisualStyleBackColor = false;
@@ -113,9 +111,9 @@ namespace Food_Ordering_System
             this.historyButton.ForeColor = System.Drawing.Color.White;
             this.historyButton.Image = ((System.Drawing.Image)(resources.GetObject("historyButton.Image")));
             this.historyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.historyButton.Location = new System.Drawing.Point(15, 368);
+            this.historyButton.Location = new System.Drawing.Point(0, 365);
             this.historyButton.Name = "historyButton";
-            this.historyButton.Size = new System.Drawing.Size(216, 75);
+            this.historyButton.Size = new System.Drawing.Size(238, 75);
             this.historyButton.TabIndex = 2;
             this.historyButton.Text = "Order History";
             this.historyButton.UseVisualStyleBackColor = false;
@@ -123,9 +121,9 @@ namespace Food_Ordering_System
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(244, 190);
+            this.pictureBox1.Size = new System.Drawing.Size(232, 190);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -140,21 +138,13 @@ namespace Food_Ordering_System
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(15, 449);
+            this.button1.Location = new System.Drawing.Point(0, 448);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(216, 75);
+            this.button1.Size = new System.Drawing.Size(238, 75);
             this.button1.TabIndex = 4;
             this.button1.Text = "Log Out";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Crimson;
-            this.panel2.Location = new System.Drawing.Point(0, 203);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(12, 78);
-            this.panel2.TabIndex = 2;
             // 
             // restaurantNameDashboard
             // 
@@ -196,7 +186,6 @@ namespace Food_Ordering_System
         private System.Windows.Forms.Panel sidePanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button addMenuItemButton;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button historyButton;
