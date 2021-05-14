@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -8,6 +9,7 @@ namespace Food_Ordering_System
 {
     public partial class HomeScreenBusiness : Form
     {
+        public SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
         public HomeScreenBusiness()
         {
             InitializeComponent();
@@ -15,17 +17,7 @@ namespace Food_Ordering_System
 
         private void pageLoad(object sender, EventArgs e)
         {
-            try
-            {
-                DataTable restaurant_data = new DataTable();
-                SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
-                new SqlDataAdapter($"SELECT * FROM RestaurantInformation INNER JOIN activeUsers ON RestaurantInformation.manager_email = activeUsers.user_email;", connect).Fill(restaurant_data);
-                restaurantNameDashboard.Text = restaurant_data.Rows[0][1].ToString() + " - Dashboard";
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }
+            customProfile1.BringToFront();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,14 +25,34 @@ namespace Food_Ordering_System
             try
             {
                 DataTable deleteData = new DataTable();
-                SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
                 new SqlDataAdapter($"DELETE FROM activeUsers;", connect).Fill(deleteData);
-                Hide(); new LoginScreen().Show();
+                new LoginScreen().Show(); Close();
             }
             catch (Exception exc)
             {
                 MessageBox.Show(exc.Message);
             }
+        }
+
+        private void addMenuItemButton_Click(object sender, EventArgs e)
+        {
+            ProfileButton.BackColor = Color.FromArgb(42, 42, 42);
+            historyButton.BackColor = Color.FromArgb(42, 42, 42);
+            addMenuItemButton.BackColor = Color.Crimson;
+        }
+
+        private void historyButton_Click(object sender, EventArgs e)
+        {
+            ProfileButton.BackColor = Color.FromArgb(42, 42, 42);
+            historyButton.BackColor = Color.Crimson;
+            addMenuItemButton.BackColor = Color.FromArgb(42, 42, 42);
+        }
+
+        private void ProfileButton_Click(object sender, EventArgs e)
+        {
+            ProfileButton.BackColor = Color.Crimson;
+            historyButton.BackColor = Color.FromArgb(42, 42, 42);
+            addMenuItemButton.BackColor = Color.FromArgb(42, 42, 42);
         }
     }
 }

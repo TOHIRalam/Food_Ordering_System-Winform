@@ -132,7 +132,7 @@ namespace Food_Ordering_System
                                             new SqlDataAdapter($"INSERT INTO UserInfo VALUES ('{name}', '{email}', '{password.GetHashCode()}', '{contact}', '{address}', 'Business', '{DateTime.Now.ToString()}')", connect).Fill(insertData);
                                             MessageBox.Show("Registration Successful!");
                                             connect.Close();
-                                            Hide(); new LoginScreen().Show();
+                                            new LoginScreen().Show(); Close();
                                         }
                                         catch (Exception ex)
                                         {

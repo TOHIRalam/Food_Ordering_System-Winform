@@ -26,8 +26,7 @@ namespace Food_Ordering_System
 
                 if (dataTable.Rows.Count == 1)
                 {
-                    Hide();
-                    new AdminView().Show();
+                    new AdminView().Show(); Close();
                 }
                 else
                 {
@@ -42,8 +41,7 @@ namespace Food_Ordering_System
 
         private void loginLabel_Click(object sender, EventArgs e)
         {
-            Hide();
-            new LoginScreen().Show();
+            new LoginScreen().Show(); Close();
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Food_Ordering_System
 {
-    public partial class my_restaurant_user_control : UserControl
+    public partial class CustomUpdateMenu : UserControl
     {
-        public my_restaurant_user_control()
+        public CustomUpdateMenu()
         {
             InitializeComponent();
         }

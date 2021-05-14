@@ -34,7 +34,7 @@ namespace Food_Ordering_System
                             new HomeScreenDelivery().Show();
                         } else {
                             new HomeScreenBusiness().Show();
-                        }
+                        } 
                     } else {
                         MessageBox.Show("User do not exist!");
                         searchedData.Clear();
@@ -52,7 +52,7 @@ namespace Food_Ordering_System
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             Hide();
-            new RegistrationScreenDelivery().Show();
+            new RegistrationScreenDelivery().Show(); 
         }
 
         private void textBoxHover(object sender, EventArgs e)
@@ -98,7 +98,7 @@ namespace Food_Ordering_System
         private void adminLabel_Click(object sender, EventArgs e)
         {
             Hide();
-            new LoginScreenAdmin().Show();
+            new LoginScreenAdmin().Show(); 
         }
 
         private void LoginScreen_Load(object sender, EventArgs e)
