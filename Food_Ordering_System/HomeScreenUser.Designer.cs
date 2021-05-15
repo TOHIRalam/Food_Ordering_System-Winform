@@ -30,36 +30,37 @@ namespace Food_Ordering_System
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeScreenUser));
-            this.ProfileButton = new System.Windows.Forms.Button();
+            this.HomeButton = new System.Windows.Forms.Button();
             this.sidePanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.UsernameLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.orderHistory = new System.Windows.Forms.Button();
             this.myCart = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.UsernameLabel = new System.Windows.Forms.Label();
             this.customFoodItems1 = new Food_Ordering_System.CustomFoodItems();
+            this.customMyCart1 = new Food_Ordering_System.CustomMyCart();
             this.sidePanel.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ProfileButton
+            // HomeButton
             // 
-            this.ProfileButton.BackColor = System.Drawing.Color.Crimson;
-            this.ProfileButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ProfileButton.FlatAppearance.BorderSize = 0;
-            this.ProfileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ProfileButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileButton.ForeColor = System.Drawing.Color.White;
-            this.ProfileButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ProfileButton.Location = new System.Drawing.Point(0, 206);
-            this.ProfileButton.Name = "ProfileButton";
-            this.ProfileButton.Size = new System.Drawing.Size(238, 75);
-            this.ProfileButton.TabIndex = 1;
-            this.ProfileButton.Text = "Home";
-            this.ProfileButton.UseVisualStyleBackColor = false;
-            this.ProfileButton.Click += new System.EventHandler(this.ProfileButton_Click);
+            this.HomeButton.BackColor = System.Drawing.Color.Crimson;
+            this.HomeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.HomeButton.FlatAppearance.BorderSize = 0;
+            this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HomeButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HomeButton.ForeColor = System.Drawing.Color.White;
+            this.HomeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.HomeButton.Location = new System.Drawing.Point(0, 206);
+            this.HomeButton.Name = "HomeButton";
+            this.HomeButton.Size = new System.Drawing.Size(238, 75);
+            this.HomeButton.TabIndex = 1;
+            this.HomeButton.Text = "Home";
+            this.HomeButton.UseVisualStyleBackColor = false;
+            this.HomeButton.Click += new System.EventHandler(this.HomeButtonClick);
             // 
             // sidePanel
             // 
@@ -67,34 +68,13 @@ namespace Food_Ordering_System
             this.sidePanel.Controls.Add(this.button1);
             this.sidePanel.Controls.Add(this.pictureBox1);
             this.sidePanel.Controls.Add(this.orderHistory);
-            this.sidePanel.Controls.Add(this.ProfileButton);
+            this.sidePanel.Controls.Add(this.HomeButton);
             this.sidePanel.Controls.Add(this.myCart);
             this.sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePanel.Location = new System.Drawing.Point(0, 0);
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(239, 753);
             this.sidePanel.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Crimson;
-            this.panel1.Controls.Add(this.UsernameLabel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(239, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1143, 62);
-            this.panel1.TabIndex = 6;
-            // 
-            // UsernameLabel
-            // 
-            this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.UsernameLabel.Location = new System.Drawing.Point(15, 19);
-            this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(107, 23);
-            this.UsernameLabel.TabIndex = 2;
-            this.UsernameLabel.Text = "username";
             // 
             // button1
             // 
@@ -138,6 +118,7 @@ namespace Food_Ordering_System
             this.orderHistory.TabIndex = 2;
             this.orderHistory.Text = "Order History";
             this.orderHistory.UseVisualStyleBackColor = false;
+            this.orderHistory.Click += new System.EventHandler(this.orderHistory_Click);
             // 
             // myCart
             // 
@@ -154,6 +135,28 @@ namespace Food_Ordering_System
             this.myCart.TabIndex = 0;
             this.myCart.Text = "My Cart";
             this.myCart.UseVisualStyleBackColor = false;
+            this.myCart.Click += new System.EventHandler(this.myCart_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Crimson;
+            this.panel1.Controls.Add(this.UsernameLabel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(239, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1143, 62);
+            this.panel1.TabIndex = 6;
+            // 
+            // UsernameLabel
+            // 
+            this.UsernameLabel.AutoSize = true;
+            this.UsernameLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.UsernameLabel.Location = new System.Drawing.Point(15, 19);
+            this.UsernameLabel.Name = "UsernameLabel";
+            this.UsernameLabel.Size = new System.Drawing.Size(107, 23);
+            this.UsernameLabel.TabIndex = 2;
+            this.UsernameLabel.Text = "username";
             // 
             // customFoodItems1
             // 
@@ -163,12 +166,21 @@ namespace Food_Ordering_System
             this.customFoodItems1.Size = new System.Drawing.Size(1144, 688);
             this.customFoodItems1.TabIndex = 7;
             // 
+            // customMyCart1
+            // 
+            this.customMyCart1.BackColor = System.Drawing.Color.Snow;
+            this.customMyCart1.Location = new System.Drawing.Point(238, 56);
+            this.customMyCart1.Name = "customMyCart1";
+            this.customMyCart1.Size = new System.Drawing.Size(1144, 703);
+            this.customMyCart1.TabIndex = 8;
+            // 
             // HomeScreenUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(1382, 753);
+            this.Controls.Add(this.customMyCart1);
             this.Controls.Add(this.customFoodItems1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.sidePanel);
@@ -180,9 +192,9 @@ namespace Food_Ordering_System
             this.Text = "PaantaHaari";
             this.Load += new System.EventHandler(this.pageLoad);
             this.sidePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,7 +202,7 @@ namespace Food_Ordering_System
         #endregion
 
         private System.Windows.Forms.Button myCart;
-        private System.Windows.Forms.Button ProfileButton;
+        private System.Windows.Forms.Button HomeButton;
         private System.Windows.Forms.Button orderHistory;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
@@ -198,5 +210,6 @@ namespace Food_Ordering_System
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label UsernameLabel;
         private CustomFoodItems customFoodItems1;
+        private CustomMyCart customMyCart1;
     }
 }

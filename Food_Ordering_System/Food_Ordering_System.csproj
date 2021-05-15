@@ -58,6 +58,12 @@
     <Compile Include="CustomFoodItems.Designer.cs">
       <DependentUpon>CustomFoodItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomMyCart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomMyCart.Designer.cs">
+      <DependentUpon>CustomMyCart.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomProfile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomFoodItems.resx">
       <DependentUpon>CustomFoodItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomMyCart.resx">
+      <DependentUpon>CustomMyCart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomProfile.resx">
       <DependentUpon>CustomProfile.cs</DependentUpon>

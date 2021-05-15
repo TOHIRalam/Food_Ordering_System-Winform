@@ -41,9 +41,25 @@ namespace Food_Ordering_System
             catch (Exception exc) { MessageBox.Show(exc.Message); }
         }
 
-        private void breakfastgrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void breakfastgrid_CellContentClick(object sender, DataGridViewCellEventArgs e) {}
 
+        private void searchBox_Click(object sender, EventArgs e)
+        {
+            if(catagoryComboBox.SelectedItem != null)
+            {
+                try
+                {
+                    DataTable dataTable = new DataTable();
+                    string catagory = catagoryComboBox.SelectedItem.ToString();
+                    if(catagory == "All") {
+                        new SqlDataAdapter($"SELECT id, food_name, food_picture, item_description, food_quantity, price FROM food_menu", connect).Fill(dataTable);
+                    } else {
+                        new SqlDataAdapter($"SELECT id, food_name, food_picture, item_description, food_quantity, price FROM food_menu WHERE catagory = '{catagory}'", connect).Fill(dataTable);
+                    }
+                    foodItemGrid.DataSource = dataTable;
+                }
+                catch (Exception exc) { MessageBox.Show(exc.Message); }
+            }
         }
     }
 }
