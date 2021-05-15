@@ -52,6 +52,12 @@
     <Compile Include="AdminView.Designer.cs">
       <DependentUpon>AdminView.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomFoodItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomFoodItems.Designer.cs">
+      <DependentUpon>CustomFoodItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomProfile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </Compile>
     <EmbeddedResource Include="AdminView.resx">
       <DependentUpon>AdminView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomFoodItems.resx">
+      <DependentUpon>CustomFoodItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomProfile.resx">
       <DependentUpon>CustomProfile.cs</DependentUpon>

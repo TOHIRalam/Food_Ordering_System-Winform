@@ -31,17 +31,18 @@ namespace Food_Ordering_System
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeScreenBusiness));
             this.sidePanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.restaurantNameDashboard = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.historyButton = new System.Windows.Forms.Button();
             this.ProfileButton = new System.Windows.Forms.Button();
             this.addMenuItemButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.restaurantNameDashboard = new System.Windows.Forms.Label();
+            this.customUpdateMenu1 = new Food_Ordering_System.CustomUpdateMenu();
             this.customProfile1 = new Food_Ordering_System.CustomProfile();
             this.sidePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -57,6 +58,27 @@ namespace Food_Ordering_System
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(238, 753);
             this.sidePanel.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Crimson;
+            this.panel1.Controls.Add(this.restaurantNameDashboard);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(238, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1144, 62);
+            this.panel1.TabIndex = 1;
+            // 
+            // restaurantNameDashboard
+            // 
+            this.restaurantNameDashboard.AutoSize = true;
+            this.restaurantNameDashboard.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.restaurantNameDashboard.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.restaurantNameDashboard.Location = new System.Drawing.Point(15, 19);
+            this.restaurantNameDashboard.Name = "restaurantNameDashboard";
+            this.restaurantNameDashboard.Size = new System.Drawing.Size(116, 23);
+            this.restaurantNameDashboard.TabIndex = 2;
+            this.restaurantNameDashboard.Text = "Dashboard";
             // 
             // button1
             // 
@@ -140,26 +162,13 @@ namespace Food_Ordering_System
             this.addMenuItemButton.UseVisualStyleBackColor = false;
             this.addMenuItemButton.Click += new System.EventHandler(this.addMenuItemButton_Click);
             // 
-            // panel1
+            // customUpdateMenu1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Crimson;
-            this.panel1.Controls.Add(this.restaurantNameDashboard);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(238, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1144, 62);
-            this.panel1.TabIndex = 1;
-            // 
-            // restaurantNameDashboard
-            // 
-            this.restaurantNameDashboard.AutoSize = true;
-            this.restaurantNameDashboard.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.restaurantNameDashboard.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.restaurantNameDashboard.Location = new System.Drawing.Point(15, 19);
-            this.restaurantNameDashboard.Name = "restaurantNameDashboard";
-            this.restaurantNameDashboard.Size = new System.Drawing.Size(116, 23);
-            this.restaurantNameDashboard.TabIndex = 2;
-            this.restaurantNameDashboard.Text = "Dashboard";
+            this.customUpdateMenu1.BackColor = System.Drawing.Color.Snow;
+            this.customUpdateMenu1.Location = new System.Drawing.Point(238, 59);
+            this.customUpdateMenu1.Name = "customUpdateMenu1";
+            this.customUpdateMenu1.Size = new System.Drawing.Size(1144, 703);
+            this.customUpdateMenu1.TabIndex = 3;
             // 
             // customProfile1
             // 
@@ -175,6 +184,7 @@ namespace Food_Ordering_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(1382, 753);
+            this.Controls.Add(this.customUpdateMenu1);
             this.Controls.Add(this.customProfile1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.sidePanel);
@@ -187,9 +197,9 @@ namespace Food_Ordering_System
             this.Text = "PaantaHaari (Business)";
             this.Load += new System.EventHandler(this.pageLoad);
             this.sidePanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,5 +215,6 @@ namespace Food_Ordering_System
         private System.Windows.Forms.Button ProfileButton;
         private System.Windows.Forms.Label restaurantNameDashboard;
         private CustomProfile customProfile1;
+        private CustomUpdateMenu customUpdateMenu1;
     }
 }

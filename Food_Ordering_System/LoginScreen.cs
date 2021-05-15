@@ -24,13 +24,13 @@ namespace Food_Ordering_System
                 try {
                     DataTable searchedData = new DataTable(); DataTable activeUser = new DataTable();
                     SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
-                    new SqlDataAdapter($"SELECT email, password, user_type FROM UserInfo WHERE email = '{email}' AND password = '{password.GetHashCode()}';", connect).Fill(searchedData);
+                    new SqlDataAdapter($"SELECT name, email, password, user_type FROM UserInfo WHERE email = '{email}' AND password = '{password.GetHashCode()}';", connect).Fill(searchedData);
                     if (searchedData.Rows.Count == 1) {
-                        new SqlDataAdapter($"INSERT INTO activeUsers VALUES ('{email}')", connect).Fill(activeUser);
+                        new SqlDataAdapter($"INSERT INTO activeUsers VALUES ('{email}', '{searchedData.Rows[0][0]}')", connect).Fill(activeUser);
                         Hide();
-                        if (searchedData.Rows[0][2].ToString() == "User") {
+                        if (searchedData.Rows[0][3].ToString() == "User") {
                             new HomeScreenUser().Show();
-                        } else if(searchedData.Rows[0][2].ToString() == "Delivery") {
+                        } else if(searchedData.Rows[0][3].ToString() == "Delivery") {
                             new HomeScreenDelivery().Show();
                         } else {
                             new HomeScreenBusiness().Show();
@@ -99,11 +99,6 @@ namespace Food_Ordering_System
         {
             Hide();
             new LoginScreenAdmin().Show(); 
-        }
-
-        private void LoginScreen_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -39,6 +39,7 @@ namespace Food_Ordering_System
             ProfileButton.BackColor = Color.FromArgb(42, 42, 42);
             historyButton.BackColor = Color.FromArgb(42, 42, 42);
             addMenuItemButton.BackColor = Color.Crimson;
+            customUpdateMenu1.BringToFront();
         }
 
         private void historyButton_Click(object sender, EventArgs e)
@@ -53,6 +54,7 @@ namespace Food_Ordering_System
             ProfileButton.BackColor = Color.Crimson;
             historyButton.BackColor = Color.FromArgb(42, 42, 42);
             addMenuItemButton.BackColor = Color.FromArgb(42, 42, 42);
+            customProfile1.BringToFront();
         }
     }
 }
