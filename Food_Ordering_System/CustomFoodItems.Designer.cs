@@ -38,6 +38,7 @@ namespace Food_Ordering_System
             this.foodItemGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.idBox = new System.Windows.Forms.TextBox();
             this.quantityBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -47,11 +48,10 @@ namespace Food_Ordering_System
             this.catagoryComboBox = new System.Windows.Forms.ComboBox();
             this.searchBox = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.foodItemGrid)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -154,10 +154,19 @@ namespace Food_Ordering_System
             this.label2.TabIndex = 13;
             this.label2.Text = "Order Food";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1144, 50);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // idBox
             // 
             this.idBox.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idBox.Location = new System.Drawing.Point(135, 91);
+            this.idBox.Location = new System.Drawing.Point(129, 91);
             this.idBox.Name = "idBox";
             this.idBox.Size = new System.Drawing.Size(308, 27);
             this.idBox.TabIndex = 9;
@@ -165,7 +174,7 @@ namespace Food_Ordering_System
             // quantityBox
             // 
             this.quantityBox.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityBox.Location = new System.Drawing.Point(510, 91);
+            this.quantityBox.Location = new System.Drawing.Point(504, 91);
             this.quantityBox.Name = "quantityBox";
             this.quantityBox.Size = new System.Drawing.Size(308, 27);
             this.quantityBox.TabIndex = 11;
@@ -176,9 +185,9 @@ namespace Food_Ordering_System
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Franklin Gothic Medium", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Snow;
-            this.button1.Location = new System.Drawing.Point(893, 88);
+            this.button1.Location = new System.Drawing.Point(869, 85);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 30);
+            this.button1.Size = new System.Drawing.Size(121, 35);
             this.button1.TabIndex = 12;
             this.button1.Text = "Add to cart";
             this.button1.UseVisualStyleBackColor = false;
@@ -188,7 +197,7 @@ namespace Food_Ordering_System
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(130, 56);
+            this.label5.Location = new System.Drawing.Point(124, 56);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 30);
             this.label5.TabIndex = 8;
@@ -198,7 +207,7 @@ namespace Food_Ordering_System
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(505, 58);
+            this.label6.Location = new System.Drawing.Point(499, 58);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 30);
             this.label6.TabIndex = 10;
@@ -252,15 +261,6 @@ namespace Food_Ordering_System
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1144, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // CustomFoodItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -279,8 +279,8 @@ namespace Food_Ordering_System
             ((System.ComponentModel.ISupportInitialize)(this.foodItemGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

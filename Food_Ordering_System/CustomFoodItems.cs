@@ -9,6 +9,7 @@ namespace Food_Ordering_System
 {
     public partial class CustomFoodItems : UserControl
     {
+        public static int totalPrice = 0;
         public SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
         public CustomFoodItems()
         {
@@ -17,7 +18,25 @@ namespace Food_Ordering_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if(idBox.Text != "" || quantityBox.Text != "")
+            {
+                int id = Convert.ToInt16(idBox.Text.Trim());
+                int quantity = Convert.ToInt16(quantityBox.Text.Trim());
+                try
+                {
+                    DataTable innerJoinTable = new DataTable(); DataTable dataTable = new DataTable(); DataTable userName = new DataTable();
+                    new SqlDataAdapter($"SELECT * FROM activeUsers", connect).Fill(userName);
+                    new SqlDataAdapter($"SELECT food_menu.id, food_menu.manager_email, food_menu.food_name, food_menu.price, food_menu.food_quantity," +
+                        $" RestaurantInformation.restaurant_name FROM food_menu INNER JOIN RestaurantInformation ON " +
+                        $"food_menu.manager_email = RestaurantInformation.manager_email WHERE food_menu.id = {id}", connect).Fill(innerJoinTable);
+                    new SqlDataAdapter($"INSERT INTO cartItems VALUES ({id}, '{userName.Rows[0][1]}', '{innerJoinTable.Rows[0][1]}', " +
+                        $"'{innerJoinTable.Rows[0][5]}', '{innerJoinTable.Rows[0][2]}', '{innerJoinTable.Rows[0][4]} x {quantity}', " +
+                        $"{Convert.ToInt16(innerJoinTable.Rows[0][3])*quantity}, 'Pending', '{DateTime.Now}')", connect).Fill(dataTable);
+                    MessageBox.Show("Item added to cart");
+                    idBox.Text = ""; quantityBox.Text = "";
+                }
+                catch (Exception exc) { MessageBox.Show(exc.Message); }
+            }
         }
 
         private void pageLoad(object sender, EventArgs e)

@@ -14,6 +14,11 @@ namespace Food_Ordering_System
 
         private void pageLoad(object sender, EventArgs e)
         {
+            HomeButton.BackColor = Color.Crimson;
+            myCart.BackColor = Color.FromArgb(42, 42, 42);
+            orderHistory.BackColor = Color.FromArgb(42, 42, 42);
+            customFoodItems1.BringToFront();
+
             DataTable dataTable = new DataTable();
             new SqlDataAdapter($"SELECT name FROM activeUsers", connect).Fill(dataTable);
             UsernameLabel.Text = dataTable.Rows[0][0].ToString();
@@ -43,6 +48,8 @@ namespace Food_Ordering_System
 
         private void myCart_Click(object sender, EventArgs e)
         {
+            Controls.Clear();
+            InitializeComponent();
             myCart.BackColor = Color.Crimson;
             HomeButton.BackColor = Color.FromArgb(42, 42, 42);
             orderHistory.BackColor = Color.FromArgb(42, 42, 42);

@@ -173,6 +173,7 @@ namespace Food_Ordering_System
             this.customMyCart1.Name = "customMyCart1";
             this.customMyCart1.Size = new System.Drawing.Size(1144, 703);
             this.customMyCart1.TabIndex = 8;
+            this.customMyCart1.Load += new System.EventHandler(this.pageLoad);
             // 
             // HomeScreenUser
             // 
