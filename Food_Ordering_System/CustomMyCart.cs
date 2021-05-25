@@ -43,6 +43,7 @@ namespace Food_Ordering_System
                 if (numberOfRows != 0) {
                     confirmOrder.Enabled = true; cancelButton.Enabled = true;
                     numberOfItemText.Text = "There are " + numberOfRows + " item(s) in your cart";
+                    totalPrice = 0;
                     for (int i = 0; i < numberOfRows; i++) { 
                         totalPrice += Convert.ToInt16(dataTable.Rows[i][3].ToString());
                     }
@@ -115,7 +116,7 @@ namespace Food_Ordering_System
                     DataTable delieryInput = new DataTable();
                     waitingSignal.ForeColor = Color.LimeGreen;
                     new SqlDataAdapter($"INSERT INTO delivery VALUES ('{deliverySearch.Rows[0][0]}', '{deliverySearch.Rows[0][1]}', " +
-                        $"'{dt.Rows[0][0]}', '{dt.Rows[0][2]}', '{LogInfo.session_user_name}', '{LogInfo.session_user_email}', '{LogInfo.session_user_address}', 'Request', {totalPrice})", DATABASE.connect).Fill(delieryInput);
+                        $"'{dt.Rows[0][0]}', '{dt.Rows[0][2]}', '{LogInfo.session_user_name}', '{LogInfo.session_user_email}', '{LogInfo.session_user_address}', 'Request', {totalPrice}, '{totalPrice.ToString()}#{new Random().Next(10, 99).ToString()}')", DATABASE.connect).Fill(delieryInput);
                     cancelButton.Enabled = false; confirmOrder.Enabled = false;
                 }
             }
