@@ -78,6 +78,7 @@ namespace Food_Ordering_System
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.foodItemGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.foodItemGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.foodItemGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.foodItemGrid.BackgroundColor = System.Drawing.Color.Snow;
             this.foodItemGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.foodItemGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;

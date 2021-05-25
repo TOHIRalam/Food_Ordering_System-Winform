@@ -32,17 +32,18 @@ namespace Food_Ordering_System
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeScreenUser));
             this.HomeButton = new System.Windows.Forms.Button();
             this.sidePanel = new System.Windows.Forms.Panel();
+            this.orderHistoryButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.orderHistory = new System.Windows.Forms.Button();
             this.myCart = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.UsernameLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.customFoodItems1 = new Food_Ordering_System.CustomFoodItems();
-            this.customMyCart1 = new Food_Ordering_System.CustomMyCart();
+            this.customMyCart1 = new Food_Ordering_System.processingShow();
+            this.customUserHistory1 = new Food_Ordering_System.customUserHistory();
             this.sidePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // HomeButton
@@ -65,9 +66,9 @@ namespace Food_Ordering_System
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.sidePanel.Controls.Add(this.orderHistoryButton);
             this.sidePanel.Controls.Add(this.button1);
             this.sidePanel.Controls.Add(this.pictureBox1);
-            this.sidePanel.Controls.Add(this.orderHistory);
             this.sidePanel.Controls.Add(this.HomeButton);
             this.sidePanel.Controls.Add(this.myCart);
             this.sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -75,6 +76,23 @@ namespace Food_Ordering_System
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(239, 753);
             this.sidePanel.TabIndex = 4;
+            // 
+            // orderHistoryButton
+            // 
+            this.orderHistoryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.orderHistoryButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.orderHistoryButton.FlatAppearance.BorderSize = 0;
+            this.orderHistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orderHistoryButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderHistoryButton.ForeColor = System.Drawing.Color.White;
+            this.orderHistoryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.orderHistoryButton.Location = new System.Drawing.Point(0, 357);
+            this.orderHistoryButton.Name = "orderHistoryButton";
+            this.orderHistoryButton.Size = new System.Drawing.Size(238, 75);
+            this.orderHistoryButton.TabIndex = 5;
+            this.orderHistoryButton.Text = "History";
+            this.orderHistoryButton.UseVisualStyleBackColor = false;
+            this.orderHistoryButton.Click += new System.EventHandler(this.orderHistoryButton_Click);
             // 
             // button1
             // 
@@ -85,40 +103,13 @@ namespace Food_Ordering_System
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 431);
+            this.button1.Location = new System.Drawing.Point(1, 433);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(238, 75);
             this.button1.TabIndex = 4;
             this.button1.Text = "Log Out";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(232, 190);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // orderHistory
-            // 
-            this.orderHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.orderHistory.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.orderHistory.FlatAppearance.BorderSize = 0;
-            this.orderHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.orderHistory.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderHistory.ForeColor = System.Drawing.Color.White;
-            this.orderHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.orderHistory.Location = new System.Drawing.Point(0, 356);
-            this.orderHistory.Name = "orderHistory";
-            this.orderHistory.Size = new System.Drawing.Size(238, 75);
-            this.orderHistory.TabIndex = 2;
-            this.orderHistory.Text = "Order History";
-            this.orderHistory.UseVisualStyleBackColor = false;
-            this.orderHistory.Click += new System.EventHandler(this.orderHistory_Click);
             // 
             // myCart
             // 
@@ -158,10 +149,20 @@ namespace Food_Ordering_System
             this.UsernameLabel.TabIndex = 2;
             this.UsernameLabel.Text = "username";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(232, 190);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // customFoodItems1
             // 
             this.customFoodItems1.BackColor = System.Drawing.Color.Snow;
-            this.customFoodItems1.Location = new System.Drawing.Point(238, 65);
+            this.customFoodItems1.Location = new System.Drawing.Point(238, 62);
             this.customFoodItems1.Name = "customFoodItems1";
             this.customFoodItems1.Size = new System.Drawing.Size(1144, 688);
             this.customFoodItems1.TabIndex = 7;
@@ -169,11 +170,19 @@ namespace Food_Ordering_System
             // customMyCart1
             // 
             this.customMyCart1.BackColor = System.Drawing.Color.Snow;
-            this.customMyCart1.Location = new System.Drawing.Point(238, 56);
+            this.customMyCart1.Location = new System.Drawing.Point(238, 62);
             this.customMyCart1.Name = "customMyCart1";
             this.customMyCart1.Size = new System.Drawing.Size(1144, 703);
             this.customMyCart1.TabIndex = 8;
             this.customMyCart1.Load += new System.EventHandler(this.pageLoad);
+            // 
+            // customUserHistory1
+            // 
+            this.customUserHistory1.BackColor = System.Drawing.Color.Snow;
+            this.customUserHistory1.Location = new System.Drawing.Point(238, 62);
+            this.customUserHistory1.Name = "customUserHistory1";
+            this.customUserHistory1.Size = new System.Drawing.Size(1144, 691);
+            this.customUserHistory1.TabIndex = 9;
             // 
             // HomeScreenUser
             // 
@@ -181,6 +190,7 @@ namespace Food_Ordering_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(1382, 753);
+            this.Controls.Add(this.customUserHistory1);
             this.Controls.Add(this.customMyCart1);
             this.Controls.Add(this.customFoodItems1);
             this.Controls.Add(this.panel1);
@@ -193,9 +203,9 @@ namespace Food_Ordering_System
             this.Text = "PaantaHaari";
             this.Load += new System.EventHandler(this.pageLoad);
             this.sidePanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,13 +214,14 @@ namespace Food_Ordering_System
 
         private System.Windows.Forms.Button myCart;
         private System.Windows.Forms.Button HomeButton;
-        private System.Windows.Forms.Button orderHistory;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel sidePanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label UsernameLabel;
+        private System.Windows.Forms.Button orderHistoryButton;
         private CustomFoodItems customFoodItems1;
-        private CustomMyCart customMyCart1;
+        private processingShow customMyCart1;
+        private customUserHistory customUserHistory1;
     }
 }

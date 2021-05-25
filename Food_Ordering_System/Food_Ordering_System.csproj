@@ -52,6 +52,12 @@
     <Compile Include="AdminView.Designer.cs">
       <DependentUpon>AdminView.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomDeliveryRequest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomDeliveryRequest.Designer.cs">
+      <DependentUpon>CustomDeliveryRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomFoodItems.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -64,6 +70,12 @@
     <Compile Include="CustomMyCart.Designer.cs">
       <DependentUpon>CustomMyCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomOrderRequests.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomOrderRequests.Designer.cs">
+      <DependentUpon>CustomOrderRequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomProfile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,6 +87,12 @@
     </Compile>
     <Compile Include="CustomUpdateMenu.Designer.cs">
       <DependentUpon>CustomUpdateMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customUserHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="customUserHistory.Designer.cs">
+      <DependentUpon>customUserHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginScreenAdmin.cs">
       <SubType>Form</SubType>
@@ -129,17 +147,26 @@
     <EmbeddedResource Include="AdminView.resx">
       <DependentUpon>AdminView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomDeliveryRequest.resx">
+      <DependentUpon>CustomDeliveryRequest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomFoodItems.resx">
       <DependentUpon>CustomFoodItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomMyCart.resx">
       <DependentUpon>CustomMyCart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomOrderRequests.resx">
+      <DependentUpon>CustomOrderRequests.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomProfile.resx">
       <DependentUpon>CustomProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomUpdateMenu.resx">
       <DependentUpon>CustomUpdateMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customUserHistory.resx">
+      <DependentUpon>customUserHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginScreenAdmin.resx">
       <DependentUpon>LoginScreenAdmin.cs</DependentUpon>

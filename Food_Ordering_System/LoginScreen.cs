@@ -23,20 +23,30 @@ namespace Food_Ordering_System
             } else {
                 try {
                     DataTable searchedData = new DataTable(); DataTable activeUser = new DataTable();
-                    SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
-                    new SqlDataAdapter($"SELECT name, email, password, user_type FROM UserInfo WHERE email = '{email}' AND password = '{password.GetHashCode()}';", connect).Fill(searchedData);
+                    new SqlDataAdapter($"SELECT name, email, password, user_type, contact, address FROM UserInfo WHERE email = '{email}' AND password = '{password.GetHashCode()}'", DATABASE.connect).Fill(searchedData);
                     if (searchedData.Rows.Count == 1) {
-                        new SqlDataAdapter($"INSERT INTO activeUsers VALUES ('{email}', '{searchedData.Rows[0][0]}')", connect).Fill(activeUser);
-                        Hide();
+                        LogInfo.set_user_data(searchedData.Rows[0][0].ToString(), email, searchedData.Rows[0][4].ToString(), searchedData.Rows[0][5].ToString()); Hide();
                         if (searchedData.Rows[0][3].ToString() == "User") {
                             new HomeScreenUser().Show();
                         } else if(searchedData.Rows[0][3].ToString() == "Delivery") {
                             new HomeScreenDelivery().Show();
                         } else {
-                            new HomeScreenBusiness().Show();
+                            searchedData.Clear();
+                            try
+                            {
+                                new SqlDataAdapter($"SELECT restaurant_name, restaurant_email, official_contact, restaurant_location " +
+                                $"FROM RestaurantInformation WHERE manager_email = '{LogInfo.session_user_email}'", DATABASE.connect).Fill(searchedData);
+                                LogInfo.set_business_data(searchedData.Rows[0][0].ToString(), searchedData.Rows[0][1].ToString(), searchedData.Rows[0][2].ToString(), searchedData.Rows[0][3].ToString());
+                                new HomeScreenBusiness().Show();
+                            }
+                            catch (Exception exc)
+                            {
+                                MessageBox.Show(exc.Message + "\nRestaurant Database error");
+                            }
                         } 
+                        new SqlDataAdapter($"INSERT INTO activeUsers VALUES ('{email}', '{LogInfo.session_user_name}')", DATABASE.connect).Fill(activeUser);
                     } else {
-                        MessageBox.Show("User do not exist!");
+                        MessageBox.Show("Invalid email or password!!");
                         searchedData.Clear();
                     }
                 } catch (Exception exc) {
@@ -100,5 +110,46 @@ namespace Food_Ordering_System
             Hide();
             new LoginScreenAdmin().Show(); 
         }
+    }
+
+    public static class LogInfo
+    {
+        // Temporary user info
+        public static string session_user_name;
+        public static string session_user_email;
+        public static string session_user_address;
+        public static string session_user_contact;
+
+        // Temporary business info
+        public static string session_restaurant_name;
+        public static string session_restaurant_email;
+        public static string session_restaurant_contact;
+        public static string session_restaurant_location;
+
+        public static void set_user_data(string name, string email, string contact, string address) {
+            session_user_name = name;
+            session_user_email = email;
+            session_user_contact = contact;
+            session_user_address = address;
+        }
+
+        public static void set_business_data(string restName, string restEmail, string restContact, string restLocation)
+        {
+            session_restaurant_name = restName;
+            session_restaurant_email = restEmail;
+            session_restaurant_contact = restContact;
+            session_restaurant_location = restLocation;
+        }
+
+        public static void delete_data()
+        {
+            session_user_name = ""; session_user_email = ""; session_user_contact = ""; session_user_address = "";
+            session_restaurant_name = ""; session_restaurant_email = ""; session_restaurant_contact = ""; session_restaurant_location = "";
+        }
+    }
+
+    public static class DATABASE
+    {
+        public static SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
     }
 }

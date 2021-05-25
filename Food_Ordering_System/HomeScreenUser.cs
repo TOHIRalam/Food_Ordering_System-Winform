@@ -8,20 +8,15 @@ namespace Food_Ordering_System
 {
     public partial class HomeScreenUser : Form
     {
-        public SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
         public HomeScreenUser() { InitializeComponent(); }
-
 
         private void pageLoad(object sender, EventArgs e)
         {
             HomeButton.BackColor = Color.Crimson;
+            orderHistoryButton.BackColor = Color.FromArgb(42, 42, 42);
             myCart.BackColor = Color.FromArgb(42, 42, 42);
-            orderHistory.BackColor = Color.FromArgb(42, 42, 42);
             customFoodItems1.BringToFront();
-
-            DataTable dataTable = new DataTable();
-            new SqlDataAdapter($"SELECT name FROM activeUsers", connect).Fill(dataTable);
-            UsernameLabel.Text = dataTable.Rows[0][0].ToString();
+            UsernameLabel.Text = LogInfo.session_user_name;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,7 +24,8 @@ namespace Food_Ordering_System
             try
             {
                 DataTable deleteData = new DataTable();
-                new SqlDataAdapter($"DELETE FROM activeUsers;", connect).Fill(deleteData);
+                new SqlDataAdapter($"DELETE FROM activeUsers WHERE user_email = '{LogInfo.session_user_email}'", DATABASE.connect).Fill(deleteData);
+                LogInfo.delete_data();
                 new LoginScreen().Show(); Close();
             }
             catch (Exception exc)
@@ -40,9 +36,11 @@ namespace Food_Ordering_System
 
         private void HomeButtonClick(object sender, EventArgs e)
         {
+            Controls.Clear();
+            InitializeComponent();
+            orderHistoryButton.BackColor = Color.FromArgb(42, 42, 42);
             HomeButton.BackColor = Color.Crimson;
             myCart.BackColor = Color.FromArgb(42, 42, 42);
-            orderHistory.BackColor = Color.FromArgb(42, 42, 42);
             customFoodItems1.BringToFront();
         }
 
@@ -51,17 +49,18 @@ namespace Food_Ordering_System
             Controls.Clear();
             InitializeComponent();
             myCart.BackColor = Color.Crimson;
+            orderHistoryButton.BackColor = Color.FromArgb(42, 42, 42);
             HomeButton.BackColor = Color.FromArgb(42, 42, 42);
-            orderHistory.BackColor = Color.FromArgb(42, 42, 42);
             customMyCart1.BringToFront();
         }
 
-        private void orderHistory_Click(object sender, EventArgs e)
+        private void orderHistoryButton_Click(object sender, EventArgs e)
         {
-            orderHistory.BackColor = Color.Crimson;
-            HomeButton.BackColor = Color.FromArgb(42, 42, 42);
+            Controls.Clear();
+            InitializeComponent();
             myCart.BackColor = Color.FromArgb(42, 42, 42);
-            orderHistory.BringToFront();
+            orderHistoryButton.BackColor = Color.Crimson;
+            HomeButton.BackColor = Color.FromArgb(42, 42, 42);
         }
     }
 }

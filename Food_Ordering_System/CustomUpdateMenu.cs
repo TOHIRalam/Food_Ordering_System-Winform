@@ -11,7 +11,6 @@ namespace Food_Ordering_System
     {
         public bool foodPicAdded = false;
         public string foodPictureLocation = "";
-        public SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
         public CustomUpdateMenu()
         {
             InitializeComponent();
@@ -30,9 +29,8 @@ namespace Food_Ordering_System
                 int price = Convert.ToInt16(priceBox.Text.Trim());
                 try
                 {
-                    DataTable dataTable = new DataTable(); DataTable dt = new DataTable(); DataTable dt2 = new DataTable();
-                    new SqlDataAdapter($"SELECT * FROM activeUsers", connect).Fill(dt);
-                    new SqlDataAdapter($"SELECT id FROM food_menu", connect).Fill(dt2);
+                    DataTable dataTable = new DataTable(); DataTable dt2 = new DataTable();
+                    new SqlDataAdapter($"SELECT id FROM food_menu", DATABASE.connect).Fill(dt2);
                     if(dt2.Rows.Count != 0) { id = Convert.ToInt16(dt2.Rows[0][0].ToString()) + 1; }
 
                     // Convert to binary
@@ -42,15 +40,15 @@ namespace Food_Ordering_System
                     itemPicture = itemBinary.ReadBytes((int)itemPicStream.Length);
 
                     // Upload to database
-                    string SqlQueryInsert = $"INSERT INTO food_menu VALUES({id}, '{dt.Rows[0][0].ToString()}', '{catagory}', '{itemName}', '{quantity}', {price}, @itemPic, '{description}')";
-                    connect.Open();
-                    SqlCommand cmd = new SqlCommand(SqlQueryInsert, connect);
+                    string SqlQueryInsert = $"INSERT INTO food_menu VALUES({id}, '{LogInfo.session_user_email}', '{catagory}', '{itemName}', '{quantity}', {price}, @itemPic, '{description}')";
+                    DATABASE.connect.Open();
+                    SqlCommand cmd = new SqlCommand(SqlQueryInsert, DATABASE.connect);
                     cmd.Parameters.Add(new SqlParameter("@itemPic", itemPicture));
                     int n = cmd.ExecuteNonQuery(); dt2.Clear();
                     
-                    new SqlDataAdapter($"SELECT * FROM food_menu", connect).Fill(dt2);
+                    new SqlDataAdapter($"SELECT * FROM food_menu", DATABASE.connect).Fill(dt2);
                     fooItemListDataGrid.DataSource = dt2;
-                    connect.Close();
+                    DATABASE.connect.Close();
 
                     itemNameBox.Text = ""; itemPicture = null; priceBox.Text = ""; descriptionBox.Text = "";
                 }
@@ -63,7 +61,7 @@ namespace Food_Ordering_System
             try
             {
                 DataTable dataTable = new DataTable();
-                new SqlDataAdapter($"SELECT * FROM food_menu", connect).Fill(dataTable);
+                new SqlDataAdapter($"SELECT * FROM food_menu", DATABASE.connect).Fill(dataTable);
                 fooItemListDataGrid.DataSource = dataTable;
             }
             catch(Exception exc) { MessageBox.Show(exc.Message); }
@@ -80,6 +78,26 @@ namespace Food_Ordering_System
                 foodPictureLocation = foodPicture.FileName.ToString();
             }
             foodPicAdded = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(itemIDBox.Text != "")
+            {
+                try
+                {
+                    DataTable dt = new DataTable();
+                    new SqlDataAdapter($"DELETE FROM food_menu WHERE id = {Convert.ToInt16(itemIDBox.Text.Trim())}", DATABASE.connect).Fill(dt);
+                    dt.Clear();
+                    new SqlDataAdapter($"SELECT * FROM food_menu", DATABASE.connect).Fill(dt);
+                    fooItemListDataGrid.DataSource = dt;
+                    itemIDBox.Text = "";
+                }
+                catch(Exception exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
+            }
         }
     }
 }

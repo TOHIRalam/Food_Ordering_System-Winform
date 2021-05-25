@@ -9,7 +9,6 @@ namespace Food_Ordering_System
 {
     public partial class CustomProfile : UserControl
     {
-        public SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
         public CustomProfile()
         {
             InitializeComponent();
@@ -32,9 +31,14 @@ namespace Food_Ordering_System
                     DataTable dataTable = new DataTable();
                     string field = fieldComboBox.SelectedItem.ToString().Trim();
                     string value = valueBox.Text.Trim();
-                    new SqlDataAdapter($"UPDATE RestaurantInformation SET {field} = '{value}' WHERE manager_email = '{userEmailText.Text.Trim()}'", connect).Fill(dataTable);
-                    Hide(); new HomeScreenBusiness().Show(); 
+                    if(field == LogInfo.session_restaurant_email) { LogInfo.session_restaurant_email = value; }
+                    else if (field == LogInfo.session_restaurant_contact) { LogInfo.session_restaurant_contact = value; }
+                    else if (field == LogInfo.session_restaurant_name) { LogInfo.session_restaurant_name = value; }
+                    else if (field == LogInfo.session_restaurant_location) { LogInfo.session_restaurant_location = value; }
+                    new SqlDataAdapter($"UPDATE RestaurantInformation SET {field} = '{value}' WHERE manager_email = '{LogInfo.session_user_email}'", DATABASE.connect).Fill(dataTable);
                     dataTable.Clear();
+                    Form.ActiveForm.Close();
+                    new HomeScreenBusiness().Show();
                 }
                 catch (Exception exc) { MessageBox.Show(exc.Message); }
             }
@@ -47,7 +51,7 @@ namespace Food_Ordering_System
             try
             {
                 DataTable restaurant_data = new DataTable();
-                new SqlDataAdapter($"SELECT * FROM RestaurantInformation INNER JOIN activeUsers ON RestaurantInformation.manager_email = activeUsers.user_email;", connect).Fill(restaurant_data);
+                new SqlDataAdapter($"SELECT * FROM RestaurantInformation WHERE manager_email = '{LogInfo.session_user_email}'", DATABASE.connect).Fill(restaurant_data);
 
                 // Retrieve logo from database
                 byte[] restaurant_logo = (byte[])(restaurant_data.Rows[0][5]);
@@ -61,7 +65,7 @@ namespace Food_Ordering_System
 
 
                 DataTable user_data = new DataTable();
-                new SqlDataAdapter($"SELECT * FROM UserInfo INNER JOIN activeUsers ON UserInfo.email = activeUsers.user_email;", connect).Fill(user_data);
+                new SqlDataAdapter($"SELECT * FROM UserInfo WHERE email = '{LogInfo.session_user_email}'", DATABASE.connect).Fill(user_data);
 
                 // Retrieve propic from database
                 byte[] propicManager = (byte[])(restaurant_data.Rows[0][6]);
@@ -77,7 +81,6 @@ namespace Food_Ordering_System
 
                 // Recaptcha
                 recaptchaNumber.Text = new Random().Next(1000, 10000).ToString();
-
             }
             catch (Exception exc)
             {

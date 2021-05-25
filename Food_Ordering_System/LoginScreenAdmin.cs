@@ -21,8 +21,7 @@ namespace Food_Ordering_System
             try
             {
                 DataTable dataTable = new DataTable();
-                SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
-                new SqlDataAdapter($"SELECT * FROM adminLogin WHERE name = '{name}' AND password = '{password}'", connect).Fill(dataTable);
+                new SqlDataAdapter($"SELECT * FROM adminLogin WHERE name = '{name}' AND password = '{password}'", DATABASE.connect).Fill(dataTable);
 
                 if (dataTable.Rows.Count == 1)
                 {

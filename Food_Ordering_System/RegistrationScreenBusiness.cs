@@ -119,19 +119,18 @@ namespace Food_Ordering_System
                                             FileStream propicStream = new FileStream(propicLocation, FileMode.Open, FileAccess.Read);
                                             BinaryReader propicBinary = new BinaryReader(propicStream);
                                             propic = propicBinary.ReadBytes((int)propicStream.Length);
-
-                                            SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
+                                            
                                             string SqlQueryInsert = $"INSERT INTO RestaurantInformation VALUES('{email}', '{restaurantName}', '{officialEmail}', '{officialContact}', '{restaurantLocation}', @logo, @propic)";
-                                            connect.Open();
-                                            SqlCommand cmd = new SqlCommand(SqlQueryInsert, connect);
+                                            DATABASE.connect.Open();
+                                            SqlCommand cmd = new SqlCommand(SqlQueryInsert, DATABASE.connect);
                                             cmd.Parameters.Add(new SqlParameter("@logo", logo));
                                             cmd.Parameters.Add(new SqlParameter("@propic", propic));
                                             int n = cmd.ExecuteNonQuery();
 
                                             // new SqlDataAdapter(SqlQueryInsert, connect).Fill(insertDataRestaurant);
-                                            new SqlDataAdapter($"INSERT INTO UserInfo VALUES ('{name}', '{email}', '{password.GetHashCode()}', '{contact}', '{address}', 'Business', '{DateTime.Now.ToString()}')", connect).Fill(insertData);
+                                            new SqlDataAdapter($"INSERT INTO UserInfo VALUES ('{name}', '{email}', '{password.GetHashCode()}', '{contact}', '{address}', 'Business', '{DateTime.Now.ToString()}')", DATABASE.connect).Fill(insertData);
                                             MessageBox.Show("Registration Successful!");
-                                            connect.Close();
+                                            DATABASE.connect.Close();
                                             new LoginScreen().Show(); Close();
                                         }
                                         catch (Exception ex)
@@ -164,7 +163,7 @@ namespace Food_Ordering_System
         {
             OpenFileDialog logo = new OpenFileDialog();
             logo.Filter = "Image Files (*.jpg;*.jpeg;.*.gif;)|*.jpg;*.jpeg;.*.gif";
-            logo.Title = "Select your restaurant's logo picture";
+            logo.Title = "Insert your restaurant's logo";
             if (logo.ShowDialog() == DialogResult.OK)
             {
                 logoUploadBox.Image = new Bitmap(logo.FileName);

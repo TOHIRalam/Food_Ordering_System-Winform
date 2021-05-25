@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Food_Ordering_System
@@ -15,6 +10,20 @@ namespace Food_Ordering_System
         public HomeScreenDelivery()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable deleteData = new DataTable();
+                new SqlDataAdapter($"DELETE FROM activeUsers WHERE user_email = '{LogInfo.session_user_email}'", DATABASE.connect).Fill(deleteData);
+                LogInfo.delete_data(); new LoginScreen().Show(); Close();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
         }
     }
 }

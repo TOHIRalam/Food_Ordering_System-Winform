@@ -31,26 +31,27 @@ namespace Food_Ordering_System
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeScreenBusiness));
             this.sidePanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.restaurantNameDashboard = new System.Windows.Forms.Label();
+            this.requestButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.historyButton = new System.Windows.Forms.Button();
             this.ProfileButton = new System.Windows.Forms.Button();
             this.addMenuItemButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.restaurantNameDashboard = new System.Windows.Forms.Label();
+            this.customOrderRequests1 = new Food_Ordering_System.CustomOrderRequests();
             this.customUpdateMenu1 = new Food_Ordering_System.CustomUpdateMenu();
             this.customProfile1 = new Food_Ordering_System.CustomProfile();
             this.sidePanel.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.sidePanel.Controls.Add(this.requestButton);
             this.sidePanel.Controls.Add(this.button1);
             this.sidePanel.Controls.Add(this.pictureBox1);
-            this.sidePanel.Controls.Add(this.historyButton);
             this.sidePanel.Controls.Add(this.ProfileButton);
             this.sidePanel.Controls.Add(this.addMenuItemButton);
             this.sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -58,27 +59,25 @@ namespace Food_Ordering_System
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(238, 753);
             this.sidePanel.TabIndex = 0;
+            this.sidePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sidePanel_Paint);
             // 
-            // panel1
+            // requestButton
             // 
-            this.panel1.BackColor = System.Drawing.Color.Crimson;
-            this.panel1.Controls.Add(this.restaurantNameDashboard);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(238, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1144, 62);
-            this.panel1.TabIndex = 1;
-            // 
-            // restaurantNameDashboard
-            // 
-            this.restaurantNameDashboard.AutoSize = true;
-            this.restaurantNameDashboard.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.restaurantNameDashboard.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.restaurantNameDashboard.Location = new System.Drawing.Point(15, 19);
-            this.restaurantNameDashboard.Name = "restaurantNameDashboard";
-            this.restaurantNameDashboard.Size = new System.Drawing.Size(116, 23);
-            this.restaurantNameDashboard.TabIndex = 2;
-            this.restaurantNameDashboard.Text = "Dashboard";
+            this.requestButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.requestButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.requestButton.FlatAppearance.BorderSize = 0;
+            this.requestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.requestButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.requestButton.ForeColor = System.Drawing.Color.White;
+            this.requestButton.Image = ((System.Drawing.Image)(resources.GetObject("requestButton.Image")));
+            this.requestButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.requestButton.Location = new System.Drawing.Point(0, 357);
+            this.requestButton.Name = "requestButton";
+            this.requestButton.Size = new System.Drawing.Size(238, 75);
+            this.requestButton.TabIndex = 5;
+            this.requestButton.Text = "Order Requests";
+            this.requestButton.UseVisualStyleBackColor = false;
+            this.requestButton.Click += new System.EventHandler(this.requestButton_Click);
             // 
             // button1
             // 
@@ -90,7 +89,7 @@ namespace Food_Ordering_System
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 431);
+            this.button1.Location = new System.Drawing.Point(0, 432);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(238, 75);
             this.button1.TabIndex = 4;
@@ -107,24 +106,6 @@ namespace Food_Ordering_System
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            // 
-            // historyButton
-            // 
-            this.historyButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.historyButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.historyButton.FlatAppearance.BorderSize = 0;
-            this.historyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.historyButton.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.historyButton.ForeColor = System.Drawing.Color.White;
-            this.historyButton.Image = ((System.Drawing.Image)(resources.GetObject("historyButton.Image")));
-            this.historyButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.historyButton.Location = new System.Drawing.Point(0, 356);
-            this.historyButton.Name = "historyButton";
-            this.historyButton.Size = new System.Drawing.Size(238, 75);
-            this.historyButton.TabIndex = 2;
-            this.historyButton.Text = "Order History";
-            this.historyButton.UseVisualStyleBackColor = false;
-            this.historyButton.Click += new System.EventHandler(this.historyButton_Click);
             // 
             // ProfileButton
             // 
@@ -162,6 +143,35 @@ namespace Food_Ordering_System
             this.addMenuItemButton.UseVisualStyleBackColor = false;
             this.addMenuItemButton.Click += new System.EventHandler(this.addMenuItemButton_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Crimson;
+            this.panel1.Controls.Add(this.restaurantNameDashboard);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(238, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1144, 62);
+            this.panel1.TabIndex = 1;
+            // 
+            // restaurantNameDashboard
+            // 
+            this.restaurantNameDashboard.AutoSize = true;
+            this.restaurantNameDashboard.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.restaurantNameDashboard.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.restaurantNameDashboard.Location = new System.Drawing.Point(15, 19);
+            this.restaurantNameDashboard.Name = "restaurantNameDashboard";
+            this.restaurantNameDashboard.Size = new System.Drawing.Size(116, 23);
+            this.restaurantNameDashboard.TabIndex = 2;
+            this.restaurantNameDashboard.Text = "Dashboard";
+            // 
+            // customOrderRequests1
+            // 
+            this.customOrderRequests1.BackColor = System.Drawing.Color.Snow;
+            this.customOrderRequests1.Location = new System.Drawing.Point(238, 59);
+            this.customOrderRequests1.Name = "customOrderRequests1";
+            this.customOrderRequests1.Size = new System.Drawing.Size(1144, 703);
+            this.customOrderRequests1.TabIndex = 4;
+            // 
             // customUpdateMenu1
             // 
             this.customUpdateMenu1.BackColor = System.Drawing.Color.Snow;
@@ -169,6 +179,7 @@ namespace Food_Ordering_System
             this.customUpdateMenu1.Name = "customUpdateMenu1";
             this.customUpdateMenu1.Size = new System.Drawing.Size(1144, 703);
             this.customUpdateMenu1.TabIndex = 3;
+            this.customUpdateMenu1.Load += new System.EventHandler(this.customUpdateMenu1_Load);
             // 
             // customProfile1
             // 
@@ -184,6 +195,7 @@ namespace Food_Ordering_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(1382, 753);
+            this.Controls.Add(this.customOrderRequests1);
             this.Controls.Add(this.customUpdateMenu1);
             this.Controls.Add(this.customProfile1);
             this.Controls.Add(this.panel1);
@@ -197,9 +209,9 @@ namespace Food_Ordering_System
             this.Text = "PaantaHaari (Business)";
             this.Load += new System.EventHandler(this.pageLoad);
             this.sidePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -211,10 +223,11 @@ namespace Food_Ordering_System
         private System.Windows.Forms.Button addMenuItemButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button historyButton;
         private System.Windows.Forms.Button ProfileButton;
         private System.Windows.Forms.Label restaurantNameDashboard;
         private CustomProfile customProfile1;
         private CustomUpdateMenu customUpdateMenu1;
+        private System.Windows.Forms.Button requestButton;
+        private CustomOrderRequests customOrderRequests1;
     }
 }

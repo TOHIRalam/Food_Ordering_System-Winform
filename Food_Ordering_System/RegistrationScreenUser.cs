@@ -52,15 +52,13 @@ namespace Food_Ordering_System
                                     int i;
                                     for (i = 4; i < contact.Length; i++) {
                                         if(contact[i] < '0' || contact[i] > '9') {
-                                            MessageBox.Show("Invalid contact\nPlesase insert a valid Bangladeshi contact number!\nUse +880 before your contact number!");
-                                            break;
+                                            MessageBox.Show("Invalid contact\nPlesase insert a valid Bangladeshi contact number!\nUse +880 before your contact number!"); break;
                                         }
                                     }
                                     if(i == contact.Length) {
                                         try {
                                             DataTable insertData = new DataTable();
-                                            SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\TOHIR\source\repos\Food_Ordering_System\Food_Ordering_System\Database\PaantaHaariDB.mdf;Integrated Security=True;Connect Timeout=30");
-                                            new SqlDataAdapter($"INSERT INTO UserInfo VALUES ('{name}', '{email}', '{password.GetHashCode()}', '{contact}', '{address}', 'User', '{DateTime.Now.ToString()}')", connect).Fill(insertData);
+                                            new SqlDataAdapter($"INSERT INTO UserInfo VALUES ('{name}', '{email}', '{password.GetHashCode()}', '{contact}', '{address}', 'User', '{DateTime.Now.ToString()}')", DATABASE.connect).Fill(insertData);
                                             MessageBox.Show("Registration Successful!");
                                             Hide(); new LoginScreen().Show();
                                         } catch (Exception ex) {

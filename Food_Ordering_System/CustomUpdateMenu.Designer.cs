@@ -48,8 +48,6 @@ namespace Food_Ordering_System
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.itemPriceBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.itemIDBox = new System.Windows.Forms.TextBox();
@@ -64,11 +62,11 @@ namespace Food_Ordering_System
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Papyrus", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Brown;
-            this.label1.Location = new System.Drawing.Point(441, 9);
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(436, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 64);
+            this.label1.Size = new System.Drawing.Size(182, 47);
             this.label1.TabIndex = 1;
             this.label1.Text = "Food Items";
             // 
@@ -104,13 +102,11 @@ namespace Food_Ordering_System
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.itemPriceBox);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.itemIDBox);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(864, 76);
+            this.panel2.Location = new System.Drawing.Point(864, 77);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(277, 611);
             this.panel2.TabIndex = 3;
@@ -120,7 +116,7 @@ namespace Food_Ordering_System
             this.asdf.AutoSize = true;
             this.asdf.Font = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Bold);
             this.asdf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.asdf.Location = new System.Drawing.Point(10, 516);
+            this.asdf.Location = new System.Drawing.Point(10, 462);
             this.asdf.Name = "asdf";
             this.asdf.Size = new System.Drawing.Size(124, 19);
             this.asdf.TabIndex = 24;
@@ -129,7 +125,7 @@ namespace Food_Ordering_System
             // descriptionBox
             // 
             this.descriptionBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionBox.Location = new System.Drawing.Point(13, 538);
+            this.descriptionBox.Location = new System.Drawing.Point(14, 484);
             this.descriptionBox.Name = "descriptionBox";
             this.descriptionBox.Size = new System.Drawing.Size(245, 29);
             this.descriptionBox.TabIndex = 23;
@@ -141,9 +137,9 @@ namespace Food_Ordering_System
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Snow;
-            this.button4.Location = new System.Drawing.Point(13, 573);
+            this.button4.Location = new System.Drawing.Point(13, 528);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(245, 33);
+            this.button4.Size = new System.Drawing.Size(245, 37);
             this.button4.TabIndex = 22;
             this.button4.Text = "Add Item";
             this.button4.UseVisualStyleBackColor = false;
@@ -156,9 +152,9 @@ namespace Food_Ordering_System
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Snow;
-            this.button3.Location = new System.Drawing.Point(71, 458);
+            this.button3.Location = new System.Drawing.Point(72, 396);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(187, 45);
+            this.button3.Size = new System.Drawing.Size(187, 46);
             this.button3.TabIndex = 21;
             this.button3.Text = "Add Picture";
             this.button3.UseVisualStyleBackColor = false;
@@ -167,17 +163,18 @@ namespace Food_Ordering_System
             // itemPictureBox
             // 
             this.itemPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.itemPictureBox.Location = new System.Drawing.Point(14, 458);
+            this.itemPictureBox.Location = new System.Drawing.Point(14, 396);
             this.itemPictureBox.Name = "itemPictureBox";
-            this.itemPictureBox.Size = new System.Drawing.Size(52, 45);
+            this.itemPictureBox.Size = new System.Drawing.Size(52, 46);
             this.itemPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.itemPictureBox.TabIndex = 20;
             this.itemPictureBox.TabStop = false;
+            this.itemPictureBox.Click += new System.EventHandler(this.button3_Click);
             // 
             // quantityBox
             // 
             this.quantityBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 8F);
-            this.quantityBox.Location = new System.Drawing.Point(141, 428);
+            this.quantityBox.Location = new System.Drawing.Point(141, 347);
             this.quantityBox.Name = "quantityBox";
             this.quantityBox.Size = new System.Drawing.Size(117, 24);
             this.quantityBox.TabIndex = 19;
@@ -187,7 +184,7 @@ namespace Food_Ordering_System
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(137, 406);
+            this.label11.Location = new System.Drawing.Point(137, 325);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(70, 19);
             this.label11.TabIndex = 18;
@@ -196,7 +193,7 @@ namespace Food_Ordering_System
             // priceBox
             // 
             this.priceBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 8F);
-            this.priceBox.Location = new System.Drawing.Point(14, 428);
+            this.priceBox.Location = new System.Drawing.Point(14, 347);
             this.priceBox.Name = "priceBox";
             this.priceBox.Size = new System.Drawing.Size(117, 24);
             this.priceBox.TabIndex = 17;
@@ -206,7 +203,7 @@ namespace Food_Ordering_System
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(9, 406);
+            this.label10.Location = new System.Drawing.Point(9, 325);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(43, 19);
             this.label10.TabIndex = 16;
@@ -217,7 +214,7 @@ namespace Food_Ordering_System
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(9, 347);
+            this.label9.Location = new System.Drawing.Point(10, 265);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 19);
             this.label9.TabIndex = 15;
@@ -231,7 +228,7 @@ namespace Food_Ordering_System
             "Breakfast",
             "Lunch",
             "Dinner"});
-            this.addCatagoryBox.Location = new System.Drawing.Point(13, 369);
+            this.addCatagoryBox.Location = new System.Drawing.Point(13, 287);
             this.addCatagoryBox.Name = "addCatagoryBox";
             this.addCatagoryBox.Size = new System.Drawing.Size(245, 24);
             this.addCatagoryBox.TabIndex = 6;
@@ -239,7 +236,7 @@ namespace Food_Ordering_System
             // itemNameBox
             // 
             this.itemNameBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 8F);
-            this.itemNameBox.Location = new System.Drawing.Point(13, 315);
+            this.itemNameBox.Location = new System.Drawing.Point(13, 227);
             this.itemNameBox.Name = "itemNameBox";
             this.itemNameBox.Size = new System.Drawing.Size(245, 24);
             this.itemNameBox.TabIndex = 14;
@@ -251,12 +248,13 @@ namespace Food_Ordering_System
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Snow;
-            this.button2.Location = new System.Drawing.Point(13, 194);
+            this.button2.Location = new System.Drawing.Point(174, 77);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(245, 33);
+            this.button2.Size = new System.Drawing.Size(84, 32);
             this.button2.TabIndex = 6;
-            this.button2.Text = "Update";
+            this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label8
             // 
@@ -264,7 +262,7 @@ namespace Food_Ordering_System
             this.label8.BackColor = System.Drawing.Color.SteelBlue;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Snow;
-            this.label8.Location = new System.Drawing.Point(67, 253);
+            this.label8.Location = new System.Drawing.Point(67, 145);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(137, 24);
             this.label8.TabIndex = 13;
@@ -274,7 +272,7 @@ namespace Food_Ordering_System
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.SteelBlue;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox3.Location = new System.Drawing.Point(-2, 242);
+            this.pictureBox3.Location = new System.Drawing.Point(-2, 134);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(278, 48);
             this.pictureBox3.TabIndex = 12;
@@ -285,30 +283,11 @@ namespace Food_Ordering_System
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(9, 293);
+            this.label7.Location = new System.Drawing.Point(10, 205);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 19);
             this.label7.TabIndex = 11;
             this.label7.Text = "Item Name";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(9, 119);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(165, 24);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Change item price";
-            // 
-            // itemPriceBox
-            // 
-            this.itemPriceBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemPriceBox.Location = new System.Drawing.Point(13, 146);
-            this.itemPriceBox.Name = "itemPriceBox";
-            this.itemPriceBox.Size = new System.Drawing.Size(245, 29);
-            this.itemPriceBox.TabIndex = 8;
             // 
             // label5
             // 
@@ -327,18 +306,18 @@ namespace Food_Ordering_System
             this.label4.BackColor = System.Drawing.Color.SteelBlue;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Snow;
-            this.label4.Location = new System.Drawing.Point(56, 11);
+            this.label4.Location = new System.Drawing.Point(80, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 24);
+            this.label4.Size = new System.Drawing.Size(110, 24);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Update Food Item";
+            this.label4.Text = "Delete Item";
             // 
             // itemIDBox
             // 
-            this.itemIDBox.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemIDBox.Font = new System.Drawing.Font("Microsoft JhengHei UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itemIDBox.Location = new System.Drawing.Point(13, 77);
             this.itemIDBox.Name = "itemIDBox";
-            this.itemIDBox.Size = new System.Drawing.Size(245, 29);
+            this.itemIDBox.Size = new System.Drawing.Size(155, 33);
             this.itemIDBox.TabIndex = 6;
             // 
             // pictureBox2
@@ -395,8 +374,6 @@ namespace Food_Ordering_System
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox itemPriceBox;
         private System.Windows.Forms.Label asdf;
         private System.Windows.Forms.TextBox descriptionBox;
     }

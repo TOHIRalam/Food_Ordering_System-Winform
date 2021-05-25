@@ -1,6 +1,6 @@
 ﻿namespace Food_Ordering_System
 {
-    partial class CustomMyCart
+    partial class processingShow
     {
         /// <summary> 
         /// Required designer variable.
@@ -40,16 +40,23 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.confirmOrder = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.waitingShow = new System.Windows.Forms.Label();
+            this.onGoingSignal = new System.Windows.Forms.Label();
             this.progressPanel = new System.Windows.Forms.Panel();
-            this.processingShow = new System.Windows.Forms.Label();
-            this.deliveringShow = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.deliveringSignal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.processingSignal = new System.Windows.Forms.Label();
+            this.waitingSignal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cartItemGrid)).BeginInit();
             this.progressPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cartItemGrid
@@ -185,70 +192,136 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "If you confirm your order then the payment will be through cash on delivery";
             // 
-            // waitingShow
+            // onGoingSignal
             // 
-            this.waitingShow.AutoSize = true;
-            this.waitingShow.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.waitingShow.ForeColor = System.Drawing.Color.LimeGreen;
-            this.waitingShow.Location = new System.Drawing.Point(13, 12);
-            this.waitingShow.Name = "waitingShow";
-            this.waitingShow.Size = new System.Drawing.Size(24, 24);
-            this.waitingShow.TabIndex = 9;
-            this.waitingShow.Text = "O";
+            this.onGoingSignal.AutoSize = true;
+            this.onGoingSignal.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.onGoingSignal.ForeColor = System.Drawing.Color.LimeGreen;
+            this.onGoingSignal.Location = new System.Drawing.Point(29, 12);
+            this.onGoingSignal.Name = "onGoingSignal";
+            this.onGoingSignal.Size = new System.Drawing.Size(24, 24);
+            this.onGoingSignal.TabIndex = 9;
+            this.onGoingSignal.Text = "O";
             // 
             // progressPanel
             // 
+            this.progressPanel.Controls.Add(this.label6);
+            this.progressPanel.Controls.Add(this.label5);
+            this.progressPanel.Controls.Add(this.label23);
+            this.progressPanel.Controls.Add(this.pictureBox3);
+            this.progressPanel.Controls.Add(this.deliveringSignal);
+            this.progressPanel.Controls.Add(this.label1);
             this.progressPanel.Controls.Add(this.pictureBox2);
             this.progressPanel.Controls.Add(this.pictureBox1);
-            this.progressPanel.Controls.Add(this.deliveringShow);
-            this.progressPanel.Controls.Add(this.processingShow);
-            this.progressPanel.Controls.Add(this.waitingShow);
-            this.progressPanel.Location = new System.Drawing.Point(349, 448);
+            this.progressPanel.Controls.Add(this.processingSignal);
+            this.progressPanel.Controls.Add(this.waitingSignal);
+            this.progressPanel.Controls.Add(this.onGoingSignal);
+            this.progressPanel.Location = new System.Drawing.Point(219, 448);
             this.progressPanel.Name = "progressPanel";
-            this.progressPanel.Size = new System.Drawing.Size(475, 66);
+            this.progressPanel.Size = new System.Drawing.Size(746, 66);
             this.progressPanel.TabIndex = 10;
             // 
-            // processingShow
+            // label6
             // 
-            this.processingShow.AutoSize = true;
-            this.processingShow.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.processingShow.ForeColor = System.Drawing.Color.Crimson;
-            this.processingShow.Location = new System.Drawing.Point(227, 12);
-            this.processingShow.Name = "processingShow";
-            this.processingShow.Size = new System.Drawing.Size(24, 24);
-            this.processingShow.TabIndex = 11;
-            this.processingShow.Text = "O";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(648, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 21);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Delivered";
             // 
-            // deliveringShow
+            // label5
             // 
-            this.deliveringShow.AutoSize = true;
-            this.deliveringShow.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deliveringShow.ForeColor = System.Drawing.Color.Crimson;
-            this.deliveringShow.Location = new System.Drawing.Point(442, 12);
-            this.deliveringShow.Name = "deliveringShow";
-            this.deliveringShow.Size = new System.Drawing.Size(24, 24);
-            this.deliveringShow.TabIndex = 12;
-            this.deliveringShow.Text = "O";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(432, 36);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 21);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Processing";
             // 
-            // pictureBox1
+            // label23
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox1.Location = new System.Drawing.Point(31, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 1);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(227, 36);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(59, 21);
+            this.label23.TabIndex = 18;
+            this.label23.Text = "Waiting";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox3.Location = new System.Drawing.Point(476, 22);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(200, 1);
+            this.pictureBox3.TabIndex = 17;
+            this.pictureBox3.TabStop = false;
+            // 
+            // deliveringSignal
+            // 
+            this.deliveringSignal.AutoSize = true;
+            this.deliveringSignal.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deliveringSignal.ForeColor = System.Drawing.Color.Crimson;
+            this.deliveringSignal.Location = new System.Drawing.Point(672, 12);
+            this.deliveringSignal.Name = "deliveringSignal";
+            this.deliveringSignal.Size = new System.Drawing.Size(24, 24);
+            this.deliveringSignal.TabIndex = 16;
+            this.deliveringSignal.Text = "O";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(7, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 21);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "On going";
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox2.Location = new System.Drawing.Point(246, 22);
+            this.pictureBox2.Location = new System.Drawing.Point(262, 22);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(200, 1);
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             // 
-            // CustomMyCart
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox1.Location = new System.Drawing.Point(47, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 1);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // processingSignal
+            // 
+            this.processingSignal.AutoSize = true;
+            this.processingSignal.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.processingSignal.ForeColor = System.Drawing.Color.Crimson;
+            this.processingSignal.Location = new System.Drawing.Point(458, 12);
+            this.processingSignal.Name = "processingSignal";
+            this.processingSignal.Size = new System.Drawing.Size(24, 24);
+            this.processingSignal.TabIndex = 12;
+            this.processingSignal.Text = "O";
+            // 
+            // waitingSignal
+            // 
+            this.waitingSignal.AutoSize = true;
+            this.waitingSignal.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.waitingSignal.ForeColor = System.Drawing.Color.Crimson;
+            this.waitingSignal.Location = new System.Drawing.Point(243, 12);
+            this.waitingSignal.Name = "waitingSignal";
+            this.waitingSignal.Size = new System.Drawing.Size(24, 24);
+            this.waitingSignal.TabIndex = 11;
+            this.waitingSignal.Text = "O";
+            // 
+            // processingShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -261,14 +334,15 @@
             this.Controls.Add(this.totalPriceText);
             this.Controls.Add(this.numberOfItemText);
             this.Controls.Add(this.cartItemGrid);
-            this.Name = "CustomMyCart";
+            this.Name = "processingShow";
             this.Size = new System.Drawing.Size(1144, 703);
             this.Load += new System.EventHandler(this.pageLoad);
             ((System.ComponentModel.ISupportInitialize)(this.cartItemGrid)).EndInit();
             this.progressPanel.ResumeLayout(false);
             this.progressPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,11 +357,17 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button confirmOrder;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label waitingShow;
+        private System.Windows.Forms.Label onGoingSignal;
         private System.Windows.Forms.Panel progressPanel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label deliveringShow;
-        private System.Windows.Forms.Label processingShow;
+        private System.Windows.Forms.Label processingSignal;
+        private System.Windows.Forms.Label waitingSignal;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label deliveringSignal;
     }
 }
