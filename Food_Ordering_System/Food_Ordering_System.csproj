@@ -46,16 +46,145 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HomeScreen.cs">
+    <Compile Include="AdminView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomeScreen.Designer.cs">
-      <DependentUpon>HomeScreen.cs</DependentUpon>
+    <Compile Include="AdminView.Designer.cs">
+      <DependentUpon>AdminView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomDeliveryRequest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomDeliveryRequest.Designer.cs">
+      <DependentUpon>CustomDeliveryRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomFoodItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomFoodItems.Designer.cs">
+      <DependentUpon>CustomFoodItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomMyCart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomMyCart.Designer.cs">
+      <DependentUpon>CustomMyCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomOrderRequests.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomOrderRequests.Designer.cs">
+      <DependentUpon>CustomOrderRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomProfile.Designer.cs">
+      <DependentUpon>CustomProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUpdateMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomUpdateMenu.Designer.cs">
+      <DependentUpon>CustomUpdateMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customUserHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="customUserHistory.Designer.cs">
+      <DependentUpon>customUserHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginScreenAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginScreenAdmin.Designer.cs">
+      <DependentUpon>LoginScreenAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationScreenDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationScreenDelivery.Designer.cs">
+      <DependentUpon>RegistrationScreenDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeScreenBusiness.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeScreenBusiness.Designer.cs">
+      <DependentUpon>HomeScreenBusiness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeScreenDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeScreenDelivery.Designer.cs">
+      <DependentUpon>HomeScreenDelivery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeScreenUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeScreenUser.Designer.cs">
+      <DependentUpon>HomeScreenUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginScreen.Designer.cs">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="HomeScreen.resx">
-      <DependentUpon>HomeScreen.cs</DependentUpon>
+    <Compile Include="RegistrationScreenBusiness.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationScreenBusiness.Designer.cs">
+      <DependentUpon>RegistrationScreenBusiness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationScreenUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationScreenUser.Designer.cs">
+      <DependentUpon>RegistrationScreenUser.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminView.resx">
+      <DependentUpon>AdminView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomDeliveryRequest.resx">
+      <DependentUpon>CustomDeliveryRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomFoodItems.resx">
+      <DependentUpon>CustomFoodItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomMyCart.resx">
+      <DependentUpon>CustomMyCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomOrderRequests.resx">
+      <DependentUpon>CustomOrderRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomProfile.resx">
+      <DependentUpon>CustomProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomUpdateMenu.resx">
+      <DependentUpon>CustomUpdateMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customUserHistory.resx">
+      <DependentUpon>customUserHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginScreenAdmin.resx">
+      <DependentUpon>LoginScreenAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrationScreenDelivery.resx">
+      <DependentUpon>RegistrationScreenDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeScreenBusiness.resx">
+      <DependentUpon>HomeScreenBusiness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeScreenDelivery.resx">
+      <DependentUpon>HomeScreenDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeScreenUser.resx">
+      <DependentUpon>HomeScreenUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginScreen.resx">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,6 +196,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RegistrationScreenBusiness.resx">
+      <DependentUpon>RegistrationScreenBusiness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrationScreenUser.resx">
+      <DependentUpon>RegistrationScreenUser.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -82,6 +217,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Background-HomeScreen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\photo-male-deliveryman-with-helmet-driving-yellow-scooter-while-holding-pizza-boxes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\15712.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\3825207.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -63,6 +63,16 @@ namespace Food_Ordering_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _15712 {
+            get {
+                object obj = ResourceManager.GetObject("15712", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Background_HomeScreen {
             get {
                 object obj = ResourceManager.GetObject("Background-HomeScreen", resourceCulture);
